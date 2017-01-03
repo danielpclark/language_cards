@@ -22,7 +22,6 @@ module LanguageCards
       end
       @CARDS = CardCollection.new @CARDS
     end
-
     
     def start_menu
       clear
@@ -46,6 +45,7 @@ module LanguageCards
   end
 
   class CardCollection
+    attr_reader :name
     ##
     # RULE: Always compare by value regardless of key value ordering in mapping.
     #    (This allows for duplicate spellings of the same character translation)
@@ -68,6 +68,26 @@ module LanguageCards
       end.flat_map do |k,v|
         v.send :classes, s
       end
+    end
+
+    def children
+      @hsh.select {|k,v| v.is_a? CardCollection}.values.map do |cc|
+        {cc.name => cc}
+      end.inject(:merge)
+    end
+
+    def select_collection string
+      lang, rest = string.split(JOIN, 2)
+      if collection?
+        @mapping_choice = rest
+        return self
+      else
+        children[lang].select_collection rest
+      end
+    end
+
+    def collection?
+      !!@cards
     end
 
     def cards
