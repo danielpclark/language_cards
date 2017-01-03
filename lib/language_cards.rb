@@ -3,6 +3,14 @@ require 'yaml'
 require 'i18n'
 require 'highline'
 
+##
+# TODO:
+#  * Implement score-keeper
+#  * Race against the clock
+#  * Weighted random for better learning
+#  * Value to Value is simply keyboard practice and should be clocked
+#  * Finish building Hiragana cards (figure out duplicates for ja, ju, jo)
+
 module LanguageCards
   CLEAR = "\e[3J\e[H\e[2J"
   CLI = HighLine.new
@@ -24,25 +32,27 @@ module LanguageCards
     end
     
     def start_menu
-      loop do
-        clear
-        puts I18n.t 'StartMenu.Title'
-        opt = CLI.choose do |menu|
-          menu.prompt = I18n.t 'StartMenu.Choose'
-          @CARDS.classes.each do |item|
-            menu.choice(item) 
-          end
-          menu.choices(:exit)
+      clear
+      puts I18n.t 'Menu.Title'
+      opt = CLI.choose do |menu|
+        menu.prompt = I18n.t 'Menu.Choose'
+        @CARDS.classes.each do |item|
+          menu.choice(item) 
         end
-        break if opt == :exit
-        collection = @CARDS.select_collection(opt)
+        menu.choice(I18n.t 'Menu.Exit' )
+      end
+      return if opt == I18n.t('Menu.Exit')
+      collection = @CARDS.select_collection(opt)
+
+      loop do
         comp_bitz = collection.rand
-        input = CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as}: #{comp_bitz.display}")
+        input = CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as.first}: #{comp_bitz.display}")
+        break if input == 'q'
         if collection.correct? input, comp_bitz
-          CLI.say "You have won a cookie!"
+          CLI.say I18n.t('Game.Correct')
           sleep 2
         else
-          CLI.say "You have failed this PTY!"
+          CLI.say I18n.t('Game.Incorrect')
           sleep 2
         end
       end
@@ -84,23 +94,23 @@ module LanguageCards
     end
 
     def [](value)
-      raise "Invalid option on empty card collection" unless collection?
+      raise EmptyCollection unless collection?
       @cards[value]
     end
 
     def rand
-      raise "Invalid option on empty card collection" unless collection?
+      raise EmptyCollection unless collection?
       v = @cards.keys.sample
       @comparator.given(v, @cards[v])
     end
 
     def correct? input, comp_bitz
-      raise "Invalid option on empty card collection" unless collection?
+      raise EmptyCollection unless collection?
       @comparator.match? input, comp_bitz
     end
 
     def mapped_as
-      raise "Invalid option on empty card collection" unless collection?
+      raise EmptyCollection unless collection?
       @comparator.mapped_as
     end
 
@@ -144,13 +154,21 @@ module LanguageCards
     end
 
     class Comparator
-      attr_reader :mapped_as
       def initialize mapping_key, mapping, collection
         ##
         # @title should be a hash like {"Romaji"=>"Katakana"}
         # @mapping should be an array like [:k, :v]
         @mapped_as, @mapping = mapping[mapping_key].reduce
         @collection = collection
+      end
+
+      def mapped_as
+        case @mapping.first
+        when :k
+          @mapped_as.keys
+        else
+          @mapped_as.values
+        end
       end
 
       def given key, value
@@ -241,6 +259,12 @@ module LanguageCards
       class InvalidMapping < StandardError
         def initialize
           super(I18n.t 'Errors.InvalidMapping')
+        end
+      end
+
+      class EmptyCollection < StandardError
+        def initialize
+          super(I18n.t 'Errors.EmptyCollection')
         end
       end
     end

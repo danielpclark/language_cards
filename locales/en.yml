@@ -1,9 +1,12 @@
 en:
-  StartMenu:
+  Menu:
     Title: Language Cards by @6ftdan
     Choose: Choose your flash cards.
+    Exit: Exit
   Game:
     TypeThis: Type the following in
+    Correct: Correct!
+    Incorrect: You have failed this PTY!
   Errors:
     UpperCollection: Upper level collection container.\nYou need to use a deeper collection for cards.
     InvalidMapping: >
@@ -12,6 +15,7 @@ en:
         * one with an "index" key
         * and one with one language name as the key and the other as a value
       Fix your language mapping.
+    EmptyCollection: Invalid option on empty card collection! 
   LanguageName:
     Japanese: Japanese
     Romaji: Romaji
