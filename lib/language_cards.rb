@@ -50,10 +50,8 @@ module LanguageCards
         break if input == 'q'
         if collection.correct? input, comp_bitz
           CLI.say I18n.t('Game.Correct')
-          sleep 2
         else
           CLI.say I18n.t('Game.Incorrect')
-          sleep 2
         end
       end
     end
