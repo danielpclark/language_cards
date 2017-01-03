@@ -1,0 +1,17 @@
+en:
+  StartMenu:
+    Title: Language Cards by @6ftdan
+    Choose: Choose your flash cards.
+  Errors:
+    UpperCollection: Upper level collection container.\nYou need to use a deeper collection for cards.
+    InvalidMapping: >
+      Invalid mapping in YAML definition.
+      Their needs to be exactly two entries.
+        * one with an "index" key
+        * and one with one language name as the key and the other as a value
+      Fix your language mapping.
+  LanguageName:
+    Japanese: Japanese
+    Romaji: Romaji
+    Katakana: Katakana
+    Hiragana: Hiragana
