@@ -2,6 +2,8 @@ en:
   StartMenu:
     Title: Language Cards by @6ftdan
     Choose: Choose your flash cards.
+  Game:
+    TypeThis: Type the following in
   Errors:
     UpperCollection: Upper level collection container.\nYou need to use a deeper collection for cards.
     InvalidMapping: >
