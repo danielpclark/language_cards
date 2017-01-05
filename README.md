@@ -41,6 +41,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/danielpclark/language_cards.
+Translations of the game itself are kept in the `locales` folder.  Flash cards are stored in YAML format in the`cards` folder.
 
 
 ## License
