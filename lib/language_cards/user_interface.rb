@@ -50,10 +50,10 @@ SCOREMENU
                 input = CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as.first}: #{comp_bitz.display}")
                 if collection.correct? input, comp_bitz
                   @correct = @correct.to_i + 1
-                  @last = I18n.t('Game.Correct') + " \"#{input}\" = #{comp_bitz.display}"
+                  @last = [I18n.t('Game.Correct'), "#{input} = #{comp_bitz.display}"].join(" ")
                 else
                   @incorrect = @incorrect.to_i + 1
-                  @last = [I18n.t('Game.Incorrect'), "\"#{input}\" != #{comp_bitz.display}", I18n.t('Game.Its'), "\"#{comp_bitz.key}\""].join(" ")
+                  @last = [I18n.t('Game.Incorrect'), "#{input} != #{comp_bitz.display}", I18n.t('Game.Its'), "#{comp_bitz.expected}"].join(" ")
                 end
               end
             rescue SystemExit, Interrupt

@@ -21,9 +21,9 @@ module LanguageCards
 
     def given key, value
       CompBitz.new(
-        display: choose(key, value),
+        display: choose_display(key, value),
         collection: @collection,
-        key: key,
+        expected: choose_expected(key, value),
         value: value,
         mapping: @mapping.first
       )
@@ -39,8 +39,17 @@ module LanguageCards
     end
 
     private
-    def choose key, value
+    def choose_display key, value
       case @mapping.last
+      when :k
+        key
+      when :v
+        value
+      end
+    end
+
+    def choose_expected key, value
+      case @mapping.first
       when :k
         key
       when :v

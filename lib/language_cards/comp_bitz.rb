@@ -1,10 +1,10 @@
 module LanguageCards
   class CompBitz
-    attr_reader :display, :collection, :value, :mapping, :key
+    attr_reader :display, :collection, :value, :mapping, :expected
     def initialize options
       @display = options.fetch(:display)
       @collection = options.fetch(:collection)
-      @key = options.fetch(:key)
+      @expected = options.fetch(:expected)
       @value = options.fetch(:value)
       @mapping = options.fetch(:mapping)
     end
