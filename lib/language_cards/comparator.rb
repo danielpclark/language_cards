@@ -6,7 +6,8 @@ module LanguageCards
       ##
       # @title should be a hash like {"Romaji"=>"Katakana"}
       # @mapping should be an array like [:k, :v]
-      @mapped_as, @mapping = mapping[mapping_key].reduce
+      @mapped_as, @mapping = mapping[mapping_key].reduce 
+
       @collection = collection
     end
 
