@@ -1,5 +1,5 @@
 require_relative 'comparator'
-require_relative 'mapping'
+require_relative 'mappings'
 
 module LanguageCards
   class CardCollection
@@ -9,7 +9,7 @@ module LanguageCards
     #    (This allows for duplicate spellings of the same character translation)
     def initialize hsh, name=nil
       @hsh = hsh
-      @name = I18n.t "LanguageName.#{name}" if name
+      @name = name ? I18n.t("LanguageName.#{name}") : nil
       send :_build
       @mappings = @hsh["mapping"]
       if @mappings
@@ -66,7 +66,7 @@ module LanguageCards
     end
 
     def collection?
-      !!@cards
+      !!(@cards ||= nil)
     end
 
     def cards

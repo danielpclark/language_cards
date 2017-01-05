@@ -33,19 +33,11 @@ module LanguageCards
       @mappings[key]
     end
 
-    def order key # what was my intention in design here?
-      self[key].values.flatten
-    end
-
     def has_key? key
       @mappings.has_key? key
     end
 
     def keys
-      @mappings.keys
-    end
-
-    def inspect
       @mappings.keys
     end
 

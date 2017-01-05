@@ -2,6 +2,10 @@
 
 module LanguageCards
   class UserInterface
+    def initialize
+      @last = nil
+    end
+
     def main_menu(courses:)
       title = I18n.t 'Menu.Title'
 <<-MAINMENU
