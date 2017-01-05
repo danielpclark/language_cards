@@ -10,15 +10,15 @@ Gem::Specification.new do |spec|
   spec.email         = ["6ftdan@gmail.com"]
 
   spec.summary       = %q{Flashcard game for language learning.}
-  spec.description   = %q{TFlashcard game for language learning. Make your own as well.}
+  spec.description   = %q{Flashcard game for language learning. Make your own cards or translations as well.}
   spec.homepage      = "http://github.com/danielpclark/language_cards"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+
+  spec.executables   = ['bin/language_cards']
   spec.require_paths = ["lib","cards"]
 
   spec.add_dependency "highline", "~> 1.7.8"

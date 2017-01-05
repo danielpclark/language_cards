@@ -1,8 +1,13 @@
 # LanguageCards
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/language_cards`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a flash card game for guessing translations or keyboard learning.  Currently implemented is
+English Romaji to Japanese Hirigana/Katakana and typing exercises for each.  Game experience will be improved upon!
 
-TODO: Delete this and the text above, and describe your gem
+Also if your interested in adding other flash cards for language learning, pull requests are welcome.  Please
+keep some sort of organized collection for sets of cards (for instance the Japanese-Language Proficiency Test
+has different levels to complete, N1 through N5, which would each count as a collection).
+
+Internationalization support is built in!  Translators are welcome to make this game available in other languages.
 
 ## Installation
 
@@ -22,9 +27,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After installing the gem you can run the executable `language_cards`.  If you clone the repo then use
+`bin/language_cards`.
 
 ## Development
+
+*Tests required moving forward with this project unless it's translation files.*
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
@@ -32,7 +40,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/language_cards.
+Bug reports and pull requests are welcome on GitHub at https://github.com/danielpclark/language_cards.
 
 
 ## License

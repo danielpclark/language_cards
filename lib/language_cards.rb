@@ -13,10 +13,16 @@ require 'highline'
 #  * Finish building Hiragana cards (figure out duplicates for ja, ju, jo)
 
 module LanguageCards
-  ##
-  # TODO: Check local operating system for clear or cls command and dynamically define this method via
-  #       that commands output.
-  CLEAR = "\e[3J\e[H\e[2J"
+  CLEAR = begin
+            require 'mkmf'
+            clear = case RbConfig::CONFIG['target_os']
+            when /mingw32|mswin/
+              MakeMakefile.find_executable('cls')
+            else
+              MakeMakefile.find_executable('clear')
+            end
+            clear ? `#{clear}` : "\e[3J\e[H\e[2J"
+          end
 
   CLI = HighLine.new
   JOIN = " : "
