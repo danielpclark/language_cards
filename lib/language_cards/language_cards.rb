@@ -5,7 +5,8 @@ module LanguageCards
   class LanguageCards
     def initialize
       @CARDS = {}
-      Dir[File.join 'cards', '*.yml'].each do |c|
+
+      Dir[File.join(File.expand_path(File.join('..','..','..'), __FILE__), 'cards', '*.yml')].each do |c|
         @CARDS.merge!(YAML.load(File.open(c).read))
       end
       @CARDS = CardCollection.new @CARDS
