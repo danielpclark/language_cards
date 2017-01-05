@@ -20,6 +20,7 @@ en:
         * and one with one language name as the key and the other as a value
       Fix your language mapping.
     EmptyCollection: Invalid option on empty card collection! 
+    MappingNotFound: The key for the mapping you've provided isn't in the collection!
   LanguageName:
     Japanese: Japanese
     Romaji: Romaji

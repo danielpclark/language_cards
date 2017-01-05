@@ -37,6 +37,10 @@ module LanguageCards
       self[key].values.flatten
     end
 
+    def has_key? key
+      @mappings.has_key? key
+    end
+
     def keys
       @mappings.keys
     end

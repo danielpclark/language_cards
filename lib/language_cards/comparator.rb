@@ -6,7 +6,12 @@ module LanguageCards
       ##
       # @title should be a hash like {"Romaji"=>"Katakana"}
       # @mapping should be an array like [:k, :v]
-      @mapped_as, @mapping = mapping[mapping_key].reduce 
+      raise I18n.t('Error.MappingNotFound') unless mapping.has_key? mapping_key
+      begin
+        @mapped_as, @mapping = mapping[mapping_key].reduce 
+      rescue LocalJumpError
+        raise I18n.t('Errors.InvalidMapping')
+      end
 
       @collection = collection
     end
