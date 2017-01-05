@@ -23,6 +23,7 @@ module LanguageCards
       CompBitz.new(
         display: choose(key, value),
         collection: @collection,
+        key: key,
         value: value,
         mapping: @mapping.first
       )

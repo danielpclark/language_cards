@@ -4,54 +4,68 @@ module LanguageCards
   class UserInterface
     def main_menu(courses:)
 <<-MAINMENU
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#{'~' * SUBMENUWIDTH}
 #{I18n.t 'Menu.Title'}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#{'~' * SUBMENUWIDTH}
 
 Select an option:
 
 #{ courses.each.with_index.map {|item,index| "#{index + 1}: #{item}\n" }.join.chop }
-#{ courses.length + 1}: Exit
+#{I18n.t 'Menu.Exit'}
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#{'~' * SUBMENUWIDTH}
 MAINMENU
     end
 
+    def score_menu(correct:, incorrect:)
+      score = "#{I18n.t 'Game.ScoreMenu.Score'}: #{correct.to_i} #{I18n.t 'Game.ScoreMenu.OutOf'} #{correct.to_i + incorrect.to_i}"
+<<-SCOREMENU
+#{'~' * SUBMENUWIDTH}
+#{score + I18n.t('Menu.Exit').rjust(SUBMENUWIDTH - score.length)}
+#{@last}
+#{'~' * SUBMENUWIDTH}
+SCOREMENU
+    end
 
-    def start_menu(cards)
+    def start(cards)
       clear
 
-      puts SPLASH_SCREEN
+      CLI.say SPLASH_SCREEN
       sleep 2
-      clear
-      
-      puts main_menu(courses: cards.classes)
-      #opt = CLI.choose do |menu|
-      #  menu.prompt = I18n.t 'Menu.Choose'
-      #  @CARDS.classes.each do |item|
-      #    menu.choice(item) 
-      #  end
-      #  menu.choice(I18n.t 'Menu.Exit' )
-      #end
-      #return if opt == I18n.t('Menu.Exit')
-      #collection = @CARDS.select_collection(opt)
 
-      #loop do
-      #  comp_bitz = collection.rand
-      #  input = CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as.first}: #{comp_bitz.display}")
-      #  break if input == 'q'
-      #  if collection.correct? input, comp_bitz
-      #    CLI.say I18n.t('Game.Correct')
-      #  else
-      #    CLI.say I18n.t('Game.Incorrect')
-      #  end
-      #end
+      begin
+        loop do
+          clear
+          
+          CLI.say main_menu(courses: cards.classes)
+          value = CLI.ask("").to_i - 1
+          courses = cards.classes
+          if (0..courses.length-1).include? value
+            collection = cards.select_collection(courses[value])
+            begin
+              loop do
+                clear
+                CLI.say score_menu(correct: @correct, incorrect: @incorrect)
+                comp_bitz = collection.rand
+                input = CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as.first}: #{comp_bitz.display}")
+                if collection.correct? input, comp_bitz
+                  @correct = @correct.to_i + 1
+                  @last = I18n.t('Game.Correct') + " \"#{input}\" = #{comp_bitz.display}"
+                else
+                  @incorrect = @incorrect.to_i + 1
+                  @last = [I18n.t('Game.Incorrect'), "\"#{input}\" != #{comp_bitz.display}", I18n.t('Game.Its'), "\"#{comp_bitz.key}\""].join(" ")
+                end
+              end
+            rescue SystemExit, Interrupt
+            end
+          end
+        end
+
+      rescue SystemExit, Interrupt
+      end
     end
 
     private
-    ##
-    # TODO: Check local operating system for clear or cls command and dynamically define this method via
-    #       that commands output.
     def clear
       printf CLEAR
     end

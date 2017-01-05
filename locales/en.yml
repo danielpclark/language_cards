@@ -2,11 +2,15 @@ en:
   Menu:
     Title: Language Cards by @6ftdan
     Choose: Choose your flash cards.
-    Exit: Exit
+    Exit: Press CTRL-C to quit.
   Game:
     TypeThis: Type the following in
     Correct: Correct!
-    Incorrect: You have failed this PTY!
+    Incorrect: Wrong!
+    Its: it's
+    ScoreMenu:
+      Score: Your score is
+      OutOf: out of
   Errors:
     UpperCollection: Upper level collection container.\nYou need to use a deeper collection for cards.
     InvalidMapping: >
