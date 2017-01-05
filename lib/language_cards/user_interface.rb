@@ -3,9 +3,10 @@
 module LanguageCards
   class UserInterface
     def main_menu(courses:)
+      title = I18n.t 'Menu.Title'
 <<-MAINMENU
 #{'~' * SUBMENUWIDTH}
-#{I18n.t 'Menu.Title'}
+#{title}#{('v' + VERSION).rjust(SUBMENUWIDTH - title.length)}
 #{'~' * SUBMENUWIDTH}
 
 Select an option:

@@ -18,10 +18,10 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
 
-  spec.executables   = ['bin/language_cards']
+  spec.executables   = ['language_cards']
   spec.require_paths = ["lib","cards"]
 
-  spec.add_dependency "highline", "~> 1.7.8"
+  spec.add_dependency "highline", "~> 1.7"
   spec.add_dependency "i18n", "~> 0.7"
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 12.0"
