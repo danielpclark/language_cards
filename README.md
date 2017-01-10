@@ -42,7 +42,7 @@ mapped; the how is for whether you want to do a translation mapping key to value
 value to value.  This part of the mapping must be with the symbol entries of :k or :v.  Along with the mapping
 entry you may puts all the keys and values for your cards.  Just follow the below outline for a working example.
 
-```
+```yaml
 ---
 Japanese:
   Hiragana:
