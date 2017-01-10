@@ -10,7 +10,6 @@ require 'highline'
 #  * Race against the clock
 #  * Weighted random for better learning
 #  * Value to Value is simply keyboard practice and should be clocked
-#  * Finish building Hiragana cards (figure out duplicates for ja, ju, jo)
 
 module LanguageCards
   CLEAR = begin
