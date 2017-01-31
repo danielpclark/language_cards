@@ -7,7 +7,12 @@ module LanguageCards
       @CARDS = {}
 
       Dir[File.join(File.expand_path(File.join('..','..','..'), __FILE__), 'cards', '*.yml')].+(
-      Dir[File.join(File.expand_path(ENV['HOME']), '.language_cards', 'cards', '*.yml')]).
+        if ENV['HOME']
+          Dir[File.join(File.expand_path(ENV['HOME']), '.language_cards', 'cards', '*.yml')]
+        else
+          []
+        end
+      ).
         each do |c|
         next unless yaml_data = YAML.load(File.open(c).read)
         for language in yaml_data.keys do

@@ -1,5 +1,8 @@
 # LanguageCards
-[![Gem Version](https://badge.fury.io/rb/language_cards.svg)](https://badge.fury.io/rb/language_cards)[![Build Status](https://travis-ci.org/danielpclark/language_cards.svg?branch=master)](https://travis-ci.org/danielpclark/language_cards)
+[![Gem Version](https://badge.fury.io/rb/language_cards.svg)](https://badge.fury.io/rb/language_cards)
+[![Build Status](https://travis-ci.org/danielpclark/language_cards.svg?branch=master)](https://travis-ci.org/danielpclark/language_cards)
+[![Build status](https://ci.appveyor.com/api/projects/status/y6jadvlhk50ncbrh?svg=true)](https://ci.appveyor.com/project/danielpclark/language-cards)
+
 
 This is a flash card game for guessing translations or keyboard learning.  Currently implemented is
 English Romaji to Japanese Hirigana/Katakana and typing exercises for each.  Game experience will be improved upon!
