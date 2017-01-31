@@ -14,7 +14,7 @@ class LanguageCardsTest < Minitest::Test
     refute LanguageCards::CLEAR.empty?
   end
 
-  def test_mkmf_log_file_removed
+  def test_mkmf_log_file_avoided
     refute File.exist?(File.join('..', 'mkmf.log'))
     refute File.exist?('mkmf.log')
   end
