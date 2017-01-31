@@ -31,6 +31,7 @@ module LanguageCards
   SUBMENUWIDTH = 60
 
   ::I18n.load_path = Dir[File.join(File.expand_path(File.join('..','..'), __FILE__), 'locales', '*.yml')]
+  ::I18n.load_path += Dir[File.join(File.expand_path(ENV['HOME']), '.language_cards', 'locales', '*.yml')]
 
   def self.start
     LanguageCards.new.start
