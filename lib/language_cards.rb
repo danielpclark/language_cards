@@ -19,10 +19,9 @@ module LanguageCards
               MakeMakefile.find_executable('cls')
             else
               MakeMakefile.find_executable('clear')
+              File.delete('mkmf.log')
             end
             clear ? `#{clear}` : "\e[3J\e[H\e[2J"
-          ensure
-            File.delete('mkmf.log')
           end
 
   CLI = HighLine.new
