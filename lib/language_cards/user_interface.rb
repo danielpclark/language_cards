@@ -4,16 +4,23 @@ module LanguageCards
   class UserInterface
     def initialize
       @last = nil
+      @mode = :translate
     end
 
     def main_menu(courses:)
+      clear
       title = I18n.t 'Menu.Title'
+      select = I18n.t 'Menu.Choose'
+      mode = case @mode
+             when :translate then I18n.t('Menu.ModeTranslate')
+             when :type then I18n.t('Menu.ModeType')
+             end
+
 <<-MAINMENU
 #{'~' * SUBMENUWIDTH}
 #{title}#{('v' + VERSION).rjust(SUBMENUWIDTH - title.length)}
 #{'~' * SUBMENUWIDTH}
-
-Select an option:
+#{select}#{(I18n.t('Menu.GameMode') + mode).rjust(SUBMENUWIDTH - select.length)}
 
 #{ courses.each.with_index.map {|item,index| "#{index + 1}: #{item}\n" }.join.chop }
 #{I18n.t 'Menu.Exit'}
@@ -23,7 +30,9 @@ MAINMENU
     end
 
     def score_menu(correct:, incorrect:)
+      clear
       score = "#{I18n.t 'Game.ScoreMenu.Score'}: #{correct.to_i} #{I18n.t 'Game.ScoreMenu.OutOf'} #{correct.to_i + incorrect.to_i}"
+
 <<-SCOREMENU
 #{'~' * SUBMENUWIDTH}
 #{score + I18n.t('Menu.Exit').rjust(SUBMENUWIDTH - score.length)}
@@ -40,8 +49,6 @@ SCOREMENU
 
       begin
         loop do
-          clear
-          
           CLI.say main_menu(courses: cards.classes)
           value = CLI.ask("").to_i - 1
           courses = cards.classes
@@ -49,25 +56,8 @@ SCOREMENU
             collection = cards.select_collection(courses[value])
             begin
               loop do
-                clear
                 CLI.say score_menu(correct: @correct, incorrect: @incorrect)
-                comp_bitz = collection.rand
-                input = CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as.first}: #{comp_bitz.display}")
-                if collection.correct? input, comp_bitz
-                  @correct = @correct.to_i + 1
-                  @last = [
-                    I18n.t('Game.Correct'),
-                    "#{input} = #{comp_bitz.display}"
-                  ].join(" ")
-                else
-                  @incorrect = @incorrect.to_i + 1
-                  @last = [
-                    I18n.t('Game.Incorrect'),
-                    "#{input} != #{comp_bitz.display}",
-                    I18n.t('Game.Its'),
-                    "#{comp_bitz.expected}"
-                  ].join(" ")
-                end
+                game_logic(collection)
               end
             rescue SystemExit, Interrupt
             end
@@ -81,6 +71,22 @@ SCOREMENU
     private
     def clear
       printf ::LanguageCards::ESC::CLEAR
+    end
+
+    def game_logic(collection)
+      c = collection.rand
+      i = CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as.first}: #{c.display}")
+      collection.correct?(i, c) ? last_was_correct(i, c) : last_was_incorrect(i, c)
+    end
+
+    def last_was_correct(input, comp_bitz)
+      @correct = @correct.to_i + 1
+      @last = "#{I18n.t('Game.Correct')} #{input} = #{comp_bitz.display}"
+    end
+
+    def last_was_incorrect(input, comp_bitz)
+      @incorrect = @incorrect.to_i + 1
+      @last = "#{I18n.t('Game.Incorrect')} #{input} != #{comp_bitz.display} #{I18n.t('Game.Its')} #{comp_bitz.expected}"
     end
   end
 end

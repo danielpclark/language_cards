@@ -1,7 +1,10 @@
 en:
   Menu:
     Title: Language Cards by @6ftdan
-    Choose: Choose your flash cards.
+    Choose: Select an option
+    GameMode: "GAME MODE: "
+    ModeTranslate: Translate
+    ModeType: Type
     Exit: Press CTRL-C to quit.
   Game:
     TypeThis: Type the following in
