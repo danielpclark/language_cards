@@ -3,8 +3,9 @@ en:
     Title: Language Cards by @6ftdan
     Choose: Select an option
     GameMode: "GAME MODE: "
+    ToggleGameMode: Change Mode
     ModeTranslate: Translate
-    ModeType: Type
+    ModeTyping: Typing
     Exit: Press CTRL-C to quit.
   Game:
     TypeThis: Type the following in
