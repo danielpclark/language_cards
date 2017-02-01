@@ -10,6 +10,7 @@ require 'highline'
 #  * Race against the clock
 #  * Weighted random for better learning
 #  * Value to Value is simply keyboard practice and should be clocked
+#  * In Typing practice mode remove the duplicate for incorrectness "Wrong! asdf != だ it's だ"
 
 module LanguageCards
   module ESC

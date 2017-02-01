@@ -79,7 +79,7 @@ SCOREMENU
       end
 
       def get_input
-        @input ||= CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as.first}: #{display}")
+        @input ||= CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as}: #{display}")
       end
 
       def comp_bitz
