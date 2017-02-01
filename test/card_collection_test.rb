@@ -24,8 +24,8 @@ class CardCollectionTest < Minitest::Test
   end
 
   def test_mapped_as
-    assert_equal(["Romaji"], collection.mapped_as)
-    assert_equal(["Hiragana"], collection2.mapped_as)
+    assert_equal("Romaji", collection.mapped_as)
+    assert_equal("Hiragana", collection2.mapped_as)
   end
 
   def test_children

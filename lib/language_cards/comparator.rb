@@ -19,9 +19,9 @@ module LanguageCards
     def mapped_as
       case @mapping.first
       when :k
-        @mapped_as.keys
+        @mapped_as.keys.first
       else
-        @mapped_as.values
+        @mapped_as.values.first
       end
     end
 
