@@ -14,4 +14,8 @@ class UserInterfaceTest < Minitest::Test
     assert (/#{I18n.t('Game.ScoreMenu.OutOf')}/ === sm)
     assert (/#{I18n.t('Menu.Exit')}/ === sm)
   end
+
+  def test_clear_terminal_code_is_correct
+    assert_equal "\e[3J\e[H\e[2J", LanguageCards::CLEAR
+  end
 end

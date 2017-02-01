@@ -12,17 +12,9 @@ require 'highline'
 #  * Value to Value is simply keyboard practice and should be clocked
 
 module LanguageCards
-  CLEAR = begin
-            require 'mkmf'
-            MakeMakefile::Logging.instance_variable_set(:@log, File.open(File::NULL, 'w'))
-            clear = case RbConfig::CONFIG['target_os']
-            when /mingw32|mswin/
-              MakeMakefile.find_executable('cls')
-            else
-              MakeMakefile.find_executable('clear')
-            end
-            clear ? `#{clear}` : "\e[3J\e[H\e[2J"
-          end
+  module ESC
+    CLEAR = (ERASE_SCOLLBACK = "\e[3J") + (CURSOR_HOME = "\e[H") + (ERASE_DISPLAY = "\e[2J")
+  end; include ESC
 
   CLI = HighLine.new
   JOIN = " : "
