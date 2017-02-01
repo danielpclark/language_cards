@@ -8,7 +8,6 @@ module LanguageCards
     end
 
     def main_menu(courses:)
-      clear
       title = I18n.t 'Menu.Title'
       select = I18n.t 'Menu.Choose'
       mode = case @mode
@@ -30,7 +29,6 @@ MAINMENU
     end
 
     def score_menu(correct:, incorrect:)
-      clear
       score = "#{I18n.t 'Game.ScoreMenu.Score'}: #{correct.to_i} #{I18n.t 'Game.ScoreMenu.OutOf'} #{correct.to_i + incorrect.to_i}"
 
 <<-SCOREMENU
@@ -49,6 +47,7 @@ SCOREMENU
 
       begin
         loop do
+          clear
           CLI.say main_menu(courses: cards.classes)
           value = CLI.ask("").to_i - 1
           courses = cards.classes
@@ -56,6 +55,7 @@ SCOREMENU
             collection = cards.select_collection(courses[value])
             begin
               loop do
+                clear
                 CLI.say score_menu(correct: @correct, incorrect: @incorrect)
                 game_logic(collection)
               end
@@ -70,23 +70,57 @@ SCOREMENU
 
     private
     def clear
-      printf ::LanguageCards::ESC::CLEAR
+      printf ::LanguageCards::ESC::CLEAR unless ENV['TEST']
     end
 
-    def game_logic(collection)
-      c = collection.rand
-      i = CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as.first}: #{c.display}")
-      collection.correct?(i, c) ? last_was_correct(i, c) : last_was_incorrect(i, c)
+    IC=Struct.new(:collection) do
+      def input
+        @input 
+      end
+
+      def get_input
+        @input ||= CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as.first}: #{display}")
+      end
+
+      def comp_bitz
+        @comp_bitz ||= collection.rand
+      end
+
+      def display
+        comp_bitz.display
+      end
+
+      def expected
+        comp_bitz.expected
+      end
+
+      def correct_msg
+        "#{I18n.t('Game.Correct')} #{input} = #{display}"
+      end
+
+      def incorrect_msg
+        "#{I18n.t('Game.Incorrect')} #{input} != #{display} #{I18n.t('Game.Its')} #{expected}"
+      end
+
+      def valid?
+        collection.correct?(input, comp_bitz)
+      end
     end
 
-    def last_was_correct(input, comp_bitz)
+    def game_logic(c)
+      ic = IC.new(c)
+      ic.get_input
+      ic.valid? ? last_was_correct(ic) : last_was_incorrect(ic)
+    end
+
+    def last_was_correct(ic)
       @correct = @correct.to_i + 1
-      @last = "#{I18n.t('Game.Correct')} #{input} = #{comp_bitz.display}"
+      @last = ic.correct_msg
     end
 
-    def last_was_incorrect(input, comp_bitz)
+    def last_was_incorrect(ic)
       @incorrect = @incorrect.to_i + 1
-      @last = "#{I18n.t('Game.Incorrect')} #{input} != #{comp_bitz.display} #{I18n.t('Game.Its')} #{comp_bitz.expected}"
+      @last = ic.incorrect_msg
     end
   end
 end
