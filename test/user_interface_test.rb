@@ -16,6 +16,6 @@ class UserInterfaceTest < Minitest::Test
   end
 
   def test_clear_terminal_code_is_correct
-    assert_equal "\e[3J\e[H\e[2J", LanguageCards::CLEAR
+    assert_equal "\e[3J\e[H\e[2J", LanguageCards::ESC::CLEAR
   end
 end

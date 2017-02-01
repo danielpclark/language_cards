@@ -10,8 +10,8 @@ class LanguageCardsTest < Minitest::Test
   end
 
   def test_clear_is_a_valid_clear_string
-    assert_kind_of String, LanguageCards::CLEAR
-    refute LanguageCards::CLEAR.empty?
+    assert_kind_of String, LanguageCards::ESC::CLEAR
+    refute LanguageCards::ESC::CLEAR.empty?
   end
 
   def test_mkmf_log_file_avoided

@@ -80,7 +80,7 @@ SCOREMENU
 
     private
     def clear
-      printf CLEAR
+      printf ::LanguageCards::ESC::CLEAR
     end
   end
 end

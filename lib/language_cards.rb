@@ -14,7 +14,7 @@ require 'highline'
 module LanguageCards
   module ESC
     CLEAR = (ERASE_SCOLLBACK = "\e[3J") + (CURSOR_HOME = "\e[H") + (ERASE_DISPLAY = "\e[2J")
-  end; include ESC
+  end
 
   CLI = HighLine.new
   JOIN = " : "
