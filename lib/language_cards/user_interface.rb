@@ -1,4 +1,4 @@
-
+require_relative 'timer'
 
 module LanguageCards
   class UserInterface
@@ -31,10 +31,14 @@ MAINMENU
 
     def score_menu(correct:, incorrect:)
       score = "#{I18n.t 'Game.ScoreMenu.Score'}: #{correct.to_i} #{I18n.t 'Game.ScoreMenu.OutOf'} #{correct.to_i + incorrect.to_i}"
-
+      timer = @timer.time? ? (I18n.t('Timer.Timer') + ": " + @timer.ha) : ""
+      timer = timer + @timer.h.rjust(SUBMENUWIDTH - timer.length)
 <<-SCOREMENU
 #{'~' * SUBMENUWIDTH}
+#{timer}
+#{'~' * SUBMENUWIDTH}
 #{score + I18n.t('Menu.Exit').rjust(SUBMENUWIDTH - score.length)}
+
 #{@last}
 #{'~' * SUBMENUWIDTH}
 SCOREMENU
@@ -61,9 +65,11 @@ SCOREMENU
           @last = nil
           if (0..courses.length-1).include? value
             collection = cards.select_collection(courses(value))
+            @timer = Timer.new
             begin
               loop do
                 clear
+                @timer.mark
                 CLI.say score_menu(correct: @correct, incorrect: @incorrect)
                 game_logic(collection)
               end

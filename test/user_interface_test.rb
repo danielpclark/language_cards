@@ -1,15 +1,20 @@
 require 'test_helper'
 
 class UserInterfaceTest < Minitest::Test
+  def setup
+    @ui = LanguageCards::UserInterface.new
+    @ui.instance_variable_set(:@timer, LanguageCards::Timer.new)
+  end
+
   def test_menu_contains_parts
-    mm = LanguageCards::UserInterface.new.main_menu(courses: ["Japanese"])
+    mm = @ui.main_menu(courses: ["Japanese"])
     assert (/#{I18n.t('Menu.Title')}/ === mm)
     assert (/1: Japanese/ === mm)
     assert (/#{I18n.t('Menu.Exit')}/ === mm)
   end
 
   def test_game_contains_parts
-    sm = LanguageCards::UserInterface.new.score_menu(correct: 1, incorrect: 2)
+    sm = @ui.score_menu(correct: 1, incorrect: 2)
     assert (/#{I18n.t('Game.ScoreMenu.Score')}/ === sm)
     assert (/#{I18n.t('Game.ScoreMenu.OutOf')}/ === sm)
     assert (/#{I18n.t('Menu.Exit')}/ === sm)
