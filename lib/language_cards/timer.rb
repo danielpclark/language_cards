@@ -39,7 +39,7 @@ module LanguageCards
     end
 
     def total
-      @stamps.sum
+      @stamps.inject(:+) || 0
     end
   end
 end
