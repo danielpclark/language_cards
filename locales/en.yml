@@ -17,7 +17,7 @@ en:
       OutOf: out of
   Timer:
     Timer: Timer
-    AverageSeconds: average
+    AverageSeconds: second average
   Errors:
     UpperCollection: Upper level collection container.\nYou need to use a deeper collection for cards.
     InvalidMapping: >
