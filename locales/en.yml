@@ -15,6 +15,9 @@ en:
     ScoreMenu:
       Score: Your score is
       OutOf: out of
+  Timer:
+    Timer: Timer
+    AverageSeconds: second average
   Errors:
     UpperCollection: Upper level collection container.\nYou need to use a deeper collection for cards.
     InvalidMapping: >
