@@ -7,10 +7,11 @@ module LanguageCards
         def render(courses:, mode:)
           _title = t 'Menu.Title'
           _select = t 'Menu.Choose'
-          _mode = case mode.peek
+          _mode = t('Menu.GameMode') + case mode.peek
                   when :translate then t 'Menu.ModeTranslate'
                   when :typing then t 'Menu.ModeTyping'
                   end
+          _toggle = "m: " + t('Menu.ToggleGameMode')
           _courses = courses.each.with_index.map {|item,index| "#{index + 1}: #{item}" }
           _mexit = t 'Menu.Exit'
 
