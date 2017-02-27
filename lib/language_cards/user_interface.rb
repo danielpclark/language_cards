@@ -1,55 +1,21 @@
 require_relative 'timer'
+require_relative 'helpers/view_helper'
+require_relative 'helpers/game_helper'
+require_relative 'controllers/main_menu'
+require_relative 'controllers/game'
+require 'erb'
 
 module LanguageCards
   class UserInterface
-    def initialize
-      @last = nil
-      @mode = [:translate, :typing].cycle
-      @title = ""
-    end
-
-    def main_menu(courses:)
-      title = I18n.t 'Menu.Title'
-      select = I18n.t 'Menu.Choose'
-      mode = case @mode.peek
-             when :translate then I18n.t('Menu.ModeTranslate')
-             when :typing then I18n.t('Menu.ModeTyping')
-             end
-      mexit = I18n.t 'Menu.Exit'
-
-<<-MAINMENU
-#{'~' * SUBMENUWIDTH}
-#{title}#{('v' + VERSION).rjust(SUBMENUWIDTH - title.length)}
-#{'~' * SUBMENUWIDTH}
-#{select}#{(I18n.t('Menu.GameMode') + mode).rjust(SUBMENUWIDTH - select.length)}
-
-#{ courses.each.with_index.map {|item,index| "#{index + 1}: #{item}\n" }.join.chop }
-
-#{mexit}#{("m: " + I18n.t('Menu.ToggleGameMode')).rjust(SUBMENUWIDTH - mexit.length)}
-#{'~' * SUBMENUWIDTH}
-MAINMENU
-    end
-
-    def score_menu(correct:, incorrect:)
-      score = "#{I18n.t 'Game.ScoreMenu.Score'}: #{correct.to_i} #{I18n.t 'Game.ScoreMenu.OutOf'} #{correct.to_i + incorrect.to_i}"
-      timer = @timer.time? ? (I18n.t('Timer.Timer') + ": " + @timer.ha) : ""
-      timer = timer + @timer.h.rjust(SUBMENUWIDTH - timer.length)
-      title = @title.to_s
-<<-SCOREMENU
-#{'~' * SUBMENUWIDTH}
-#{title.rjust(SUBMENUWIDTH/2+title.length/2)}
-#{'~' * SUBMENUWIDTH}
-#{timer}
-#{'~' * SUBMENUWIDTH}
-#{score + I18n.t('Menu.Exit').rjust(SUBMENUWIDTH - score.length)}
-
-#{@last}
-#{'~' * SUBMENUWIDTH}
-SCOREMENU
-    end
-
-    def start(cards)
+    include Helpers::ViewHelper
+    include Controllers
+    def initialize cards
+      @cards = cards
       @courses = cards.classes
+      @mode = [:translate, :typing].cycle
+    end
+
+    def start
       clear
 
       CLI.say SPLASH_SCREEN
@@ -59,24 +25,29 @@ SCOREMENU
         loop do
           clear
 
-          CLI.say main_menu(courses: courses)
+          CLI.say MainMenu.render courses: courses, mode: mode
 
           value = CLI.ask("")
 
-          next @mode.next if value =~ /\Am\z/i
+          next mode.next if value =~ /\Am\z/i
           value = value.to_i - 1 rescue next
 
-          @last = nil
+          last = nil
           if (0..courses.length-1).include? value
             collection = cards.select_collection(courses(value))
-            @title = collection.name
-            @timer = Timer.new
+            timer = Timer.new
             begin
               loop do
                 clear
-                @timer.mark
-                CLI.say score_menu(correct: @correct, incorrect: @incorrect)
-                game_logic(collection)
+                timer.mark
+                CLI.say Game.render correct: @correct,
+                                    incorrect: @incorrect,
+                                    title: collection.name,
+                                    timer: timer,
+                                    last: last
+                result = Game.process(collection, mode)
+                result[:correct] ? correct : incorrect
+                last = result[:last]
               end
             rescue SystemExit, Interrupt
             end
@@ -88,64 +59,17 @@ SCOREMENU
     end
 
     private
-    def clear
-      printf ::LanguageCards::ESC::CLEAR
-    end
-
-    IC=Struct.new(:collection, :mode) do
-      def input
-        @input 
-      end
-
-      def get_input
-        @input ||= CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as}: #{display}")
-      end
-
-      def comp_bitz
-        @comp_bitz ||= collection.rand
-      end
-
-      def display
-        comp_bitz.display
-      end
-
-      def expected
-        comp_bitz.expected
-      end
-
-      def correct_msg
-        "#{I18n.t('Game.Correct')} #{input} = #{display}"
-      end
-
-      def incorrect_msg
-        output = "#{I18n.t('Game.Incorrect')} #{input} != #{display}"
-        output << " #{I18n.t('Game.Its')} #{expected}" if mode == :translate
-        output
-      end
-
-      def valid?
-        collection.correct?(input, comp_bitz)
-      end
-    end
-
-    def game_logic(c)
-      ic = IC.new(c, @mode.peek)
-      ic.get_input
-      ic.valid? ? last_was_correct(ic) : last_was_incorrect(ic)
-    end
-
-    def last_was_correct(ic)
+    attr_reader :mode, :cards
+    def correct
       @correct = @correct.to_i + 1
-      @last = ic.correct_msg
     end
 
-    def last_was_incorrect(ic)
+    def incorrect
       @incorrect = @incorrect.to_i + 1
-      @last = ic.incorrect_msg
     end
 
     def courses(value = nil)
-      courses = @courses.select {|c| detect_course_mode(c) == @mode.peek }
+      courses = @courses.select {|c| detect_course_mode(c) == mode.peek }
       value ? courses[value] : courses
     end
 
