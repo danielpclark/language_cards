@@ -40,13 +40,13 @@ module LanguageCards
               loop do
                 clear
                 timer.mark
-                CLI.say Game.render correct: @correct,
-                                    incorrect: @incorrect,
+                CLI.say Game.render correct: correct,
+                                    incorrect: incorrect,
                                     title: collection.name,
                                     timer: timer,
                                     last: last
                 result = Game.process(collection, mode)
-                result[:correct] ? correct : incorrect
+                result[:correct] ? correct! : incorrect!
                 last = result[:last]
               end
             rescue SystemExit, Interrupt
@@ -59,12 +59,12 @@ module LanguageCards
     end
 
     private
-    attr_reader :mode, :cards
-    def correct
+    attr_reader :mode, :cards, :correct, :incorrect
+    def correct!
       @correct = @correct.to_i + 1
     end
 
-    def incorrect
+    def incorrect!
       @incorrect = @incorrect.to_i + 1
     end
 
