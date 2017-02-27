@@ -13,26 +13,35 @@ module LanguageCards
       '~' * SUBMENUWIDTH
     end
 
+    def t str
+      I18n.t str
+    end
+
     def main_menu(courses:)
-      _title = I18n.t 'Menu.Title'
-      _select = I18n.t 'Menu.Choose'
+      _title = t 'Menu.Title'
+      _select = t 'Menu.Choose'
       _mode = case @mode.peek
-               when :translate then I18n.t('Menu.ModeTranslate')
-               when :typing then I18n.t('Menu.ModeTyping')
-               end
+              when :translate then t 'Menu.ModeTranslate'
+              when :typing then t 'Menu.ModeTyping'
+              end
       _courses = courses.each.with_index.map {|item,index| "#{index + 1}: #{item}" }
-      _mexit = I18n.t 'Menu.Exit'
+      _mexit = t 'Menu.Exit'
 
       view = ERB.new(IO.read(File.expand_path('view/main_menu.erb', __dir__)))
       view.result(binding)
     end
 
+    def calc_score c, i
+      (0.001+c.to_i)*100.0/(c.to_i+i.to_i+0.001)*1.0
+    end
+
     def score_menu(correct:, incorrect:)
-      _score = "#{I18n.t 'Game.ScoreMenu.Score'}: #{correct.to_i} #{I18n.t 'Game.ScoreMenu.OutOf'} #{correct.to_i + incorrect.to_i}"
-      _timer = @timer.time? ? (I18n.t('Timer.Timer') + ": " + @timer.ha) : ""
+      _score = t('Game.ScoreMenu.Score') + ": %0.2d%" % calc_score(correct, incorrect)
+      _timer = @timer.time? ? (t('Timer.Timer') + ": " + @timer.ha) : ""
       _timer = _timer + @timer.h.rjust(SUBMENUWIDTH - _timer.length)
       _title = @title.to_s
       _last = @last
+      _mexit = t 'Menu.Exit'
 
       view = ERB.new(IO.read(File.expand_path('view/game.erb', __dir__)))
       view.result(binding)

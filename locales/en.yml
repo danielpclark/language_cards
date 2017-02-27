@@ -14,7 +14,6 @@ en:
     Its: it's
     ScoreMenu:
       Score: Your score is
-      OutOf: out of
   Timer:
     Timer: Timer
     AverageSeconds: second average
