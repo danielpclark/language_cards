@@ -3,7 +3,7 @@
 <%= divider %>
 <%= draw(*_timer) %>
 <%= divider %>
-<%= draw (_score if correct || incorrect), nil, _mexit %>
+<%= draw (if correct || incorrect then _score end), nil, _mexit %>
 
 <%= last %>
 <%= divider %>
