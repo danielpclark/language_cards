@@ -5,6 +5,7 @@ module LanguageCards
     def initialize
       @last = nil
       @mode = [:translate, :typing].cycle
+      @title = ""
     end
 
     def main_menu(courses:)
@@ -33,9 +34,10 @@ MAINMENU
       score = "#{I18n.t 'Game.ScoreMenu.Score'}: #{correct.to_i} #{I18n.t 'Game.ScoreMenu.OutOf'} #{correct.to_i + incorrect.to_i}"
       timer = @timer.time? ? (I18n.t('Timer.Timer') + ": " + @timer.ha) : ""
       timer = timer + @timer.h.rjust(SUBMENUWIDTH - timer.length)
+      title = @title.to_s
 <<-SCOREMENU
 #{'~' * SUBMENUWIDTH}
-#{@title.rjust(SUBMENUWIDTH/2+@title.length/2)}
+#{title.rjust(SUBMENUWIDTH/2+title.length/2)}
 #{'~' * SUBMENUWIDTH}
 #{timer}
 #{'~' * SUBMENUWIDTH}
