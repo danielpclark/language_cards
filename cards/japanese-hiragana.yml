@@ -1,4 +1,4 @@
----
+--- # https://en.wikibooks.org/wiki/Japanese/Kana_chart
 Japanese:
   Hiragana:
     mapping:
@@ -10,111 +10,156 @@ Japanese:
         index:
           - :v
           - :v
-    a: あ
-    i: い
-    u: う
-    e: え
-    o: お
-    ka: か
-    ki: き
-    ku: く
-    ke: け
-    ko: こ
+    a: あ # ✓
+    i: い # ✓
+    u: う # ✓
+    e: え # ✓
+    o: お # ✓
+    ka: か # ✓
+    ki: き # ✓
+    ku: く # ✓
+    ke: け # ✓
+    ko: こ # ✓
+    ga: が # ✓
+    gi: ぎ # ✓
+    gu: ぐ # ✓
+    ge: げ # ✓
+    go: ご # ✓
+    sa: さ # ✓
+    su: す # ✓
+    se: せ # ✓
+    so: そ # ✓
+    za: ざ # ✓
+    zu: ず # ✓
+    ze: ぜ # ✓
+    zo: ぞ # ✓
+    ja: じゃ # ✓
+    ju: じゅ # ✓
+    jo: じょ # ✓
+    ta: た # ✓
+    te: て # ✓
+    to: と # ✓
+    da: だ # ✓
+    de: で # ✓
+    do: ど # ✓
+    na: な # ✓
+    ni: に # ✓
+    nu: ぬ # ✓
+    ne: ね # ✓
+    'no': の # ✓
+    ha: は # ✓
+    hi: ひ # ✓
+    he: へ # ✓
+    ho: ほ # ✓
+    ba: ば # ✓
+    bi: び # ✓
+    bu: ぶ # ✓
+    be: べ # ✓
+    bo: ぼ # ✓
+    pa: ぱ # ✓
+    pi: ぴ # ✓
+    pu: ぷ # ✓
+    pe: ぺ # ✓
+    po: ぽ # ✓
+    fu: ふ # ✓
+    ma: ま # ✓
+    mi: み # ✓
+    mu: む # ✓
+    me: め # ✓
+    mo: も # ✓
+    ya: や # ✓
+    yu: ゆ # ✓
+    yo: よ # ✓
+    ra: ら # ✓
+    ri: り # ✓
+    ru: る # ✓
+    re: れ # ✓
+    ro: ろ # ✓
+    wa: わ # ✓
+    wo: を # ✓
+    n: ん # ✓
+    tsu: つ # ✓
+    kya: きゃ # ✓
+    kyu: きゅ # ✓
+    kyo: きょ # ✓
+    gya: ぎゃ # ✓
+    gyu: ぎゅ # ✓
+    gyo: ぎょ # ✓
+    sha: しゃ # ✓
+    shi: し # ✓
+    shu: しゅ # ✓
+    sho: しょ # ✓
+    cha: ちゃ # ✓
+    chi: ち # ✓
+    chu: ちゅ # ✓
+    cho: ちょ # ✓
+    nya: にゃ # ✓
+    nyu: にゅ # ✓
+    nyo: にょ # ✓
+    hya: ひゃ # ✓
+    hyu: ひゅ # ✓
+    hyo: ひょ # ✓
+    bya: びゃ # ✓
+    byu: びゅ # ✓
+    byo: びょ # ✓
+    pya: ぴゃ # ✓
+    pyu: ぴゅ # ✓
+    pyo: ぴょ # ✓
+    mya: みゃ # ✓
+    myu: みゅ # ✓
+    myo: みょ # ✓
+    rya: りゃ # ✓
+    ryu: りゅ # ✓
+    ryo: りょ # ✓
+  Hiragana Diacritics: # https://en.wikipedia.org/wiki/Hiragana
+    mapping:
+      - Romaji: Hiragana
+        index:
+          - :k
+          - :v
+      - Hiragana: Hiragana
+        index:
+          - :v
+          - :v
     ga: が
     gi: ぎ
     gu: ぐ
     ge: げ
     go: ご
-    sa: さ
-    su: す
-    se: せ
-    so: そ
+    gya: ぎゃ
+    gyu: ぎゅ
+    gyo: ぎょ
     za: ざ
+    ji: じ
     zu: ず
     ze: ぜ
     zo: ぞ
     ja: じゃ
-    ji: じ
     ju: じゅ
     jo: じょ
-    ta: た
-    te: て
-    to: と
     da: だ
-    di: ぢ
-    du: づ
+    ji: ぢ
+    zu: づ
     de: で
     do: ど
-    na: な
-    ni: に
-    nu: ぬ
-    ne: ね
-    'no': の
-    ha: は
-    hi: ひ
-    he: へ
-    ho: ほ
+    ja: ぢゃ
+    ju: ぢゅ
+    jo: ぢょ
     ba: ば
     bi: び
     bu: ぶ
     be: べ
     bo: ぼ
+    bya: びゃ
+    byu: びゅ
+    byo: びょ
     pa: ぱ
     pi: ぴ
     pu: ぷ
     pe: ぺ
     po: ぽ
-    fu: ふ
-    ma: ま
-    mi: み
-    mu: む
-    me: め
-    mo: も
-    ya: や
-    yu: ゆ
-    yo: よ
-    ra: ら
-    ri: り
-    ru: る
-    re: れ
-    ro: ろ
-    wa: わ
-    wo: を
-    n: ん
-    vu: ゔ
-    tsu: つ
-    kya: きゃ
-    kyu: きゅ
-    kyo: きょ
-    gya: ぎゃ
-    gyu: ぎゅ
-    gyo: ぎょ
-    sha: しゃ
-    shi: し
-    shu: しゅ
-    sho: しょ
-    cha: ちゃ
-    chi: ち
-    chu: ちゅ
-    cho: ちょ
-    dya: ぢゃ
-    dyi: ぢゅ
-    dyu: ぢょ
-    nya: にゃ
-    nyu: にゅ
-    nyo: にょ
-    hya: ひゃ
-    hyu: ひゅ
-    hyo: ひょ
-    bya: びゃ
-    byu: びゅ
-    byo: びょ
     pya: ぴゃ
     pyu: ぴゅ
     pyo: ぴょ
-    mya: みゃ
-    myu: みゅ
-    myo: みょ
-    rya: りゃ
-    ryu: りゅ
-    ryo: りょ
+    vu: ゔ
+    u: ゔ

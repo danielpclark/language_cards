@@ -35,6 +35,8 @@ MAINMENU
       timer = timer + @timer.h.rjust(SUBMENUWIDTH - timer.length)
 <<-SCOREMENU
 #{'~' * SUBMENUWIDTH}
+#{@title.rjust(SUBMENUWIDTH/2+@title.length/2)}
+#{'~' * SUBMENUWIDTH}
 #{timer}
 #{'~' * SUBMENUWIDTH}
 #{score + I18n.t('Menu.Exit').rjust(SUBMENUWIDTH - score.length)}
@@ -65,6 +67,7 @@ SCOREMENU
           @last = nil
           if (0..courses.length-1).include? value
             collection = cards.select_collection(courses(value))
+            @title = collection.name
             @timer = Timer.new
             begin
               loop do

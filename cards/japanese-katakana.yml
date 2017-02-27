@@ -1,4 +1,4 @@
----
+--- # https://en.wikibooks.org/wiki/Japanese/Kana_chart
 Japanese:
   Katakana:
     mapping:
@@ -10,12 +10,172 @@ Japanese:
         index:
           - :v
           - :v
-    a: ア
-    i: イ
-    u: ウ
-    e: エ
-    o: オ
-    "-": ー
+    a: ア # ✓
+    i: イ # ✓
+    u: ウ # ✓
+    e: エ # ✓
+    o: オ # ✓
+    "-": ー # ✓
+    ka: カ # ✓
+    ki: キ # ✓
+    ku: ク # ✓
+    ke: ケ # ✓
+    ko: コ # ✓
+    ga: ガ # ✓
+    gi: ギ # ✓
+    gu: グ # ✓
+    ge: ゲ # ✓
+    go: ゴ # ✓
+    sa: サ # ✓
+    su: ス # ✓
+    se: セ # ✓
+    so: ソ # ✓
+    za: ザ # ✓
+    zu: ズ # ✓
+    ze: ゼ # ✓
+    zo: ゾ # ✓
+    ja: ジャ # ✓
+    ji: ジ # ✓
+    ju: ジュ # ✓
+    jo: ジョ # ✓
+    ta: タ # ✓
+    te: テ # ✓
+    to: ト # ✓
+    da: ダ # ✓
+    de: デ # ✓
+    do: ド # ✓
+    na: ナ # ✓
+    ni: ニ # ✓
+    nu: ヌ # ✓
+    ne: ネ # ✓
+    'no': ノ # ✓
+    ha: ハ # ✓
+    hi: ヒ # ✓
+    he: ヘ # ✓
+    ho: ホ # ✓
+    ba: バ # ✓
+    bi: ビ # ✓
+    bu: ブ # ✓
+    be: ベ # ✓
+    bo: ボ # ✓
+    pa: パ # ✓
+    pi: ピ # ✓
+    pu: プ # ✓
+    pe: ペ # ✓
+    po: ポ # ✓
+    fu: フ # ✓
+    ma: マ # ✓
+    mi: ミ # ✓
+    mu: ム # ✓
+    me: メ # ✓
+    mo: モ # ✓
+    ya: ヤ # ✓
+    yu: ユ # ✓
+    yo: ヨ # ✓
+    ra: ラ # ✓
+    ri: リ # ✓
+    ru: ル # ✓
+    re: レ # ✓
+    ro: ロ # ✓
+    wa: ワ # ✓
+    wo: ヲ # ✓
+    n: ン # ✓
+    tsu: ツ # ✓
+    kya: キャ # ✓
+    kyu: キュ # ✓
+    kyo: キョ # ✓
+    gya: ギャ # ✓
+    gyu: ギュ # ✓
+    gyo: ギョ # ✓
+    sha: シャ # ✓
+    shi: シ # ✓
+    shu: シュ # ✓
+    sho: ショ # ✓
+    cha: チャ # ✓
+    chi: チ # ✓
+    chu: チュ # ✓
+    cho: チョ # ✓
+    nya: ニャ # ✓
+    nyu: ニュ # ✓
+    nyo: ニョ # ✓
+    bya: ビャ # ✓
+    byu: ビュ # ✓
+    byo: ビョ # ✓
+    pya: ピャ # ✓
+    pyu: ピュ # ✓
+    pyo: ピョ # ✓
+    mya: ミャ # ✓
+    myu: ミュ # ✓
+    myo: ミョ # ✓
+    rya: リャ # ✓
+    ryu: リュ # ✓
+    ryo: リョ # ✓
+  Katakana Diacritics: # https://en.wikipedia.org/wiki/Katakana
+    mapping:
+      - Romaji: Katakana
+        index:
+          - :k
+          - :v
+      - Katakana: Katakana
+        index:
+          - :v
+          - :v
+    ga: ガ
+    gi: ギ
+    gu: グ
+    ge: ゲ
+    go: ゴ
+    gya: ギャ
+    gyu: ギュ
+    gyo: ギョ
+    za: ザ
+    ji: ジ
+    zu: ズ
+    ze: ゼ
+    zo: ゾ
+    ja: ジャ
+    ju: ジュ
+    jo: ジョ
+    da: ダ
+    ji: ヂ
+    zu: ヅ
+    de: デ
+    do: ド
+    ja: ヂャ
+    ju: ヂュ
+    jo: ヂョ
+    ba: バ
+    bi: ビ
+    bu: ブ
+    be: ベ
+    bo: ボ
+    bya: ビャ
+    byu: ビュ
+    byo: ビョ
+    pa: パ
+    pi: ピ
+    pu: プ
+    pe: ペ
+    po: ポ
+    pya: ピャ
+    pyu: ピュ
+    pyo: ピョ
+  Katakana Keyboard Mappings:
+    mapping:
+      - Romaji: Katakana
+        index:
+          - :k
+          - :v
+      - Katakana: Katakana
+        index:
+          - :v
+          - :v
+    a: ア 
+    i: イ 
+    u: ウ 
+    e: エ 
+    o: オ 
+    "-": ー 
     xa: ァ
     xi: ィ
     xu: ゥ
