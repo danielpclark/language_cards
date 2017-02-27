@@ -24,11 +24,12 @@ module LanguageCards
         end
 
       end
+      # Recursive Builder
       @CARDS = CardCollection.new @CARDS
     end
 
     def start
-      UserInterface.new.start(@CARDS)
+      UserInterface.new(@CARDS).start
     end
   end
 end

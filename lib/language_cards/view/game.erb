@@ -1,9 +1,9 @@
 <%= divider %>
-<%= draw(nil, _title, nil) %>
+<%= draw nil, title %>
 <%= divider %>
-<%= _timer %>
+<%= draw(*_timer) %>
 <%= divider %>
-<%= draw((_score if correct || incorrect), nil, _mexit) %>
+<%= draw (_score if correct || incorrect), nil, _mexit %>
 
-<%= _last %>
+<%= last %>
 <%= divider %>
