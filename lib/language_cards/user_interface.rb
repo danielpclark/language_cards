@@ -1,4 +1,5 @@
 require_relative 'timer'
+require 'erb'
 
 module LanguageCards
   class UserInterface
@@ -8,44 +9,40 @@ module LanguageCards
       @title = ""
     end
 
+    def divider
+      '~' * SUBMENUWIDTH
+    end
+
     def main_menu(courses:)
-      title = I18n.t 'Menu.Title'
-      select = I18n.t 'Menu.Choose'
-      mode = case @mode.peek
-             when :translate then I18n.t('Menu.ModeTranslate')
-             when :typing then I18n.t('Menu.ModeTyping')
-             end
-      mexit = I18n.t 'Menu.Exit'
+      _title = I18n.t 'Menu.Title'
+      _select = I18n.t 'Menu.Choose'
+      _mode = case @mode.peek
+               when :translate then I18n.t('Menu.ModeTranslate')
+               when :typing then I18n.t('Menu.ModeTyping')
+               end
+      _courses = courses.each.with_index.map {|item,index| "#{index + 1}: #{item}" }
+      _mexit = I18n.t 'Menu.Exit'
 
-<<-MAINMENU
-#{'~' * SUBMENUWIDTH}
-#{title}#{('v' + VERSION).rjust(SUBMENUWIDTH - title.length)}
-#{'~' * SUBMENUWIDTH}
-#{select}#{(I18n.t('Menu.GameMode') + mode).rjust(SUBMENUWIDTH - select.length)}
-
-#{ courses.each.with_index.map {|item,index| "#{index + 1}: #{item}\n" }.join.chop }
-
-#{mexit}#{("m: " + I18n.t('Menu.ToggleGameMode')).rjust(SUBMENUWIDTH - mexit.length)}
-#{'~' * SUBMENUWIDTH}
-MAINMENU
+      view = ERB.new(IO.read(File.expand_path('view/main_menu.erb', __dir__)))
+      view.result(binding)
     end
 
     def score_menu(correct:, incorrect:)
-      score = "#{I18n.t 'Game.ScoreMenu.Score'}: #{correct.to_i} #{I18n.t 'Game.ScoreMenu.OutOf'} #{correct.to_i + incorrect.to_i}"
-      timer = @timer.time? ? (I18n.t('Timer.Timer') + ": " + @timer.ha) : ""
-      timer = timer + @timer.h.rjust(SUBMENUWIDTH - timer.length)
-      title = @title.to_s
-<<-SCOREMENU
-#{'~' * SUBMENUWIDTH}
-#{title.rjust(SUBMENUWIDTH/2+title.length/2)}
-#{'~' * SUBMENUWIDTH}
-#{timer}
-#{'~' * SUBMENUWIDTH}
-#{score + I18n.t('Menu.Exit').rjust(SUBMENUWIDTH - score.length)}
+      _score = "#{I18n.t 'Game.ScoreMenu.Score'}: #{correct.to_i} #{I18n.t 'Game.ScoreMenu.OutOf'} #{correct.to_i + incorrect.to_i}"
+      _timer = @timer.time? ? (I18n.t('Timer.Timer') + ": " + @timer.ha) : ""
+      _timer = _timer + @timer.h.rjust(SUBMENUWIDTH - _timer.length)
+      _title = @title.to_s
+      _last = @last
 
-#{@last}
-#{'~' * SUBMENUWIDTH}
-SCOREMENU
+      view = ERB.new(IO.read(File.expand_path('view/game.erb', __dir__)))
+      view.result(binding)
+    end
+
+    def draw left=nil, center=nil, right=nil
+      width = SUBMENUWIDTH
+      str = left.to_s
+      str = str + center.to_s.rjust(width/2 - str.length + center.to_s.length/2)
+      str + right.to_s.rjust(width - str.length)
     end
 
     def start(cards)

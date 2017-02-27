@@ -1,0 +1,9 @@
+<%= divider %>
+<%= draw(_title, nil, 'v' + VERSION) %>
+<%= divider %>
+<%= draw(_select, nil, I18n.t('Menu.GameMode') + _mode) %>
+<% _courses.each do |course| %>
+  <%= course.chomp %><% end %>
+
+<%= draw(_mexit, nil, ("m: " + I18n.t('Menu.ToggleGameMode'))) %>
+<%= divider %>
