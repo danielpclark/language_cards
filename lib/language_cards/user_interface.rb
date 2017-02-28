@@ -16,10 +16,11 @@ module LanguageCards
     end
 
     def start
-      clear
-
-      CLI.say SPLASH_SCREEN
-      sleep 2
+      unless ENV['SKIP_SPLASH']
+        clear
+        CLI.say SPLASH_SCREEN
+        sleep 2
+      end
 
       begin
         loop do

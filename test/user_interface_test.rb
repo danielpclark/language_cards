@@ -26,4 +26,18 @@ class UserInterfaceTest < Minitest::Test
   def test_clear_terminal_code_is_correct
     assert_equal "\e[3J\e[H\e[2J", LanguageCards::ESC::CLEAR
   end
+
+  def test_main_menu_in_application_load
+    cmd = "SKIP_FLASH=1 #{File.expand_path('../bin/language_cards', __dir__)}"
+    result = sys_exec(cmd){|i,*| i.puts "1"; i.puts "wa"}
+    assert_match(I18n.t('Menu.Title'), result)
+    assert_match(LanguageCards::VERSION, result)
+    assert_match(I18n.t('LanguageName.Japanese'), result)
+    assert_match(I18n.t('Game.ScoreMenu.Score'), result)
+    assert_match(I18n.t('Timer.Timer'), result)
+    assert_match(I18n.t('Timer.AverageSeconds'), result)
+    assert_match(/00:00:00/, result)
+    assert_match(I18n.t('Menu.Exit'), result)
+    assert_match(LanguageCards::ESC::CLEAR, result)
+  end unless Gem.win_platform?
 end
