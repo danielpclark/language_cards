@@ -10,7 +10,9 @@ module LanguageCards
           _timer = [((t('Timer.Timer') + ": " + timer.ha) if timer.time?), nil, timer.h]
           _mexit = t 'Menu.Exit'
 
-          view = ERB.new(IO.read(File.expand_path('../view/game.erb', __dir__)))
+          view = File.expand_path('../view/game.erb', __dir__).
+            ᐅ( IO.method :read ).
+            ᐅ ERB.method :new
           view.result(binding)
         end
 

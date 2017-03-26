@@ -3,6 +3,7 @@ require 'language_cards/language_cards'
 require 'yaml'
 require 'i18n'
 require 'highline'
+require 'elixirize'
 
 ##
 # TODO:

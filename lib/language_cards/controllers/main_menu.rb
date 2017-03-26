@@ -15,7 +15,9 @@ module LanguageCards
           _courses = courses.each.with_index.map {|item,index| "#{index + 1}: #{item}" }
           _mexit = t 'Menu.Exit'
 
-          view = ERB.new(IO.read(File.expand_path('../view/main_menu.erb', __dir__)))
+          view = File.expand_path('../view/main_menu.erb', __dir__).
+            ᐅ( IO.method(:read) ).
+            ᐅ ERB.method(:new)
           view.result(binding)
         end
       end

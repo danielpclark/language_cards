@@ -6,30 +6,42 @@ module LanguageCards
     def initialize
       @CARDS = {}
 
-      Dir[File.join(File.expand_path(File.join('..','..','..'), __FILE__), 'cards', '*.yml')].+(
-        if ENV['HOME']
-          Dir[File.join(File.expand_path(ENV['HOME']), '.language_cards', 'cards', '*.yml')]
-        else
-          []
-        end
-      ).
-        each do |c|
-        next unless yaml_data = YAML.load(File.open(c).read)
-        for language in yaml_data.keys do
-          if @CARDS.has_key? language
-            @CARDS[language] = Hash(@CARDS[language]).merge(Hash(yaml_data[language]))
+      File.join('..','..').
+        ᐅ(File.method(:expand_path), __dir__  ).
+        ᐅ(File.method(:join), 'cards', '*.yml').
+        ᐅ(Dir.method :[]                      ).
+        +(
+          if ENV['HOME']
+            File.expand_path(ENV['HOME']).
+              ᐅ(File.method(:join), '.language_cards', 'cards', '*.yml').
+              ᐅ Dir.method :[]
           else
-            @CARDS.merge!({language => yaml_data[language]})
+            []
           end
-        end
+        ).
+          each do |c|
+          next unless yaml_data = c.ᐅ(File.method :open).ᐅ(~:read).ᐅ(YAML.method :load)
+          for language in yaml_data.keys do
+            if @CARDS.has_key? language
+              @CARDS[language] = \
+                yaml_data[language].
+                ᐅ(method :Hash).
+                ᐅ @CARDS[language].
+                  ᐅ(method :Hash).
+                  method(:merge)
+            else
+              { language => yaml_data[language] }.
+                ᐅ @CARDS.method :merge!
+            end
+          end
 
-      end
+        end
       # Recursive Builder
       @CARDS = CardCollection.new @CARDS
     end
 
     def start
-      UserInterface.new(@CARDS).start
+      @CARDS.ᐅ(UserInterface.method :new).ᐅ ~:start
     end
   end
 end

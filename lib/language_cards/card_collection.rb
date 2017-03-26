@@ -78,11 +78,11 @@ module LanguageCards
     # Replace respective raw ruby object with our objects
     def _build
       if @hsh.has_key? "mapping"
-        @hsh["mapping"] = Mappings.new(@hsh["mapping"], self) 
+        @hsh["mapping"] = Mappings.new(@hsh["mapping"], self).freeze 
       else
         @hsh.tap do |h|
           h.select {|k,v| v.is_a? Hash }.each do |k,v|
-            h[k] = self.class.new(v, k) 
+            h[k] = self.class.new(v, k)
           end
         end
       end

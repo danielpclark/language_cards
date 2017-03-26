@@ -35,7 +35,11 @@ module LanguageCards
 
           last = nil
           if (0..courses.length-1).include? value
-            collection = cards.select_collection(courses(value))
+
+            collection = value.
+              ᐅ( method :courses ).
+              ᐅ cards.method(:select_collection)
+
             timer = Timer.new
             begin
               loop do
