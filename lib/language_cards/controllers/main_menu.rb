@@ -16,8 +16,8 @@ module LanguageCards
           _mexit = t 'Menu.Exit'
 
           view = File.expand_path('../view/main_menu.erb', __dir__).
-            ᐅ( IO.method(:read) ).
-            ᐅ ERB.method(:new)
+            ᐅ( IO.method :read ).
+            ᐅ ERB.method :new
           view.result(binding)
         end
       end
