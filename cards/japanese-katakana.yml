@@ -1,367 +1,366 @@
 --- # https://en.wikibooks.org/wiki/Japanese/Kana_chart
 Japanese:
   Katakana:
-    mapping: { Romaji: Katakana }
-    a: ア # ✓
-    i: イ # ✓
-    u: ウ # ✓
-    e: エ # ✓
-    o: オ # ✓
-    "-": ー # ✓
-    ka: カ # ✓
-    ki: キ # ✓
-    ku: ク # ✓
-    ke: ケ # ✓
-    ko: コ # ✓
-    ga: ガ # ✓
-    gi: ギ # ✓
-    gu: グ # ✓
-    ge: ゲ # ✓
-    go: ゴ # ✓
-    sa: サ # ✓
-    su: ス # ✓
-    se: セ # ✓
-    so: ソ # ✓
-    za: ザ # ✓
-    zu: ズ # ✓
-    ze: ゼ # ✓
-    zo: ゾ # ✓
-    ja: ジャ # ✓
-    ji: ジ # ✓
-    ju: ジュ # ✓
-    jo: ジョ # ✓
-    ta: タ # ✓
-    te: テ # ✓
-    to: ト # ✓
-    da: ダ # ✓
-    de: デ # ✓
-    do: ド # ✓
-    na: ナ # ✓
-    ni: ニ # ✓
-    nu: ヌ # ✓
-    ne: ネ # ✓
-    'no': ノ # ✓
-    ha: ハ # ✓
-    hi: ヒ # ✓
-    he: ヘ # ✓
-    ho: ホ # ✓
-    ba: バ # ✓
-    bi: ビ # ✓
-    bu: ブ # ✓
-    be: ベ # ✓
-    bo: ボ # ✓
-    pa: パ # ✓
-    pi: ピ # ✓
-    pu: プ # ✓
-    pe: ペ # ✓
-    po: ポ # ✓
-    fu: フ # ✓
-    ma: マ # ✓
-    mi: ミ # ✓
-    mu: ム # ✓
-    me: メ # ✓
-    mo: モ # ✓
-    ya: ヤ # ✓
-    yu: ユ # ✓
-    yo: ヨ # ✓
-    ra: ラ # ✓
-    ri: リ # ✓
-    ru: ル # ✓
-    re: レ # ✓
-    ro: ロ # ✓
-    wa: ワ # ✓
-    wo: ヲ # ✓
-    n: ン # ✓
-    tsu: ツ # ✓
-    kya: キャ # ✓
-    kyu: キュ # ✓
-    kyo: キョ # ✓
-    gya: ギャ # ✓
-    gyu: ギュ # ✓
-    gyo: ギョ # ✓
-    sha: シャ # ✓
-    shi: シ # ✓
-    shu: シュ # ✓
-    sho: ショ # ✓
-    cha: チャ # ✓
-    chi: チ # ✓
-    chu: チュ # ✓
-    cho: チョ # ✓
-    nya: ニャ # ✓
-    nyu: ニュ # ✓
-    nyo: ニョ # ✓
-    bya: ビャ # ✓
-    byu: ビュ # ✓
-    byo: ビョ # ✓
-    pya: ピャ # ✓
-    pyu: ピュ # ✓
-    pyo: ピョ # ✓
-    mya: ミャ # ✓
-    myu: ミュ # ✓
-    myo: ミョ # ✓
-    rya: リャ # ✓
-    ryu: リュ # ✓
-    ryo: リョ # ✓
+    mapping: { Katakana: Romaji }
+    ア: a
+    イ: i
+    ウ: u
+    エ: e
+    オ: o
+    ー: '-'
+    カ: ka
+    キ: ki
+    ク: ku
+    ケ: ke
+    コ: ko
+    ガ: ga
+    ギ: gi
+    グ: gu
+    ゲ: ge
+    ゴ: go
+    サ: sa
+    ス: su
+    セ: se
+    ソ: so
+    ザ: za
+    ズ: zu
+    ゼ: ze
+    ゾ: zo
+    ジャ: ja
+    ジ: ji
+    ジュ: ju
+    ジョ: jo
+    タ: ta
+    テ: te
+    ト: to
+    ダ: da
+    デ: de
+    ド: do
+    ナ: na
+    ニ: ni
+    ヌ: nu
+    ネ: ne
+    ノ: 'no'
+    ハ: ha
+    ヒ: hi
+    ヘ: he
+    ホ: ho
+    バ: ba
+    ビ: bi
+    ブ: bu
+    ベ: be
+    ボ: bo
+    パ: pa
+    ピ: pi
+    プ: pu
+    ペ: pe
+    ポ: po
+    フ: fu
+    マ: ma
+    ミ: mi
+    ム: mu
+    メ: me
+    モ: mo
+    ヤ: ya
+    ユ: yu
+    ヨ: yo
+    ラ: ra
+    リ: ri
+    ル: ru
+    レ: re
+    ロ: ro
+    ワ: wa
+    ヲ: wo
+    ン: n
+    ツ: tsu
+    キャ: kya
+    キュ: kyu
+    キョ: kyo
+    ギャ: gya
+    ギュ: gyu
+    ギョ: gyo
+    シャ: sha
+    シ: shi
+    シュ: shu
+    ショ: sho
+    チャ: cha
+    チ: chi
+    チュ: chu
+    チョ: cho
+    ニャ: nya
+    ニュ: nyu
+    ニョ: nyo
+    ビャ: bya
+    ビュ: byu
+    ビョ: byo
+    ピャ: pya
+    ピュ: pyu
+    ピョ: pyo
+    ミャ: mya
+    ミュ: myu
+    ミョ: myo
+    リャ: rya
+    リュ: ryu
+    リョ: ryo
   Katakana Diacritics: # https://en.wikipedia.org/wiki/Katakana
-    mapping: { Romaji: Katakana }
-    ga: ガ
-    gi: ギ
-    gu: グ
-    ge: ゲ
-    go: ゴ
-    gya: ギャ
-    gyu: ギュ
-    gyo: ギョ
-    za: ザ
-    ji: ジ
-    zu: ズ
-    ze: ゼ
-    zo: ゾ
-    ja: ジャ
-    ju: ジュ
-    jo: ジョ
-    da: ダ
-    ji: ヂ
-    zu: ヅ
-    de: デ
-    do: ド
-    ja: ヂャ
-    ju: ヂュ
-    jo: ヂョ
-    ba: バ
-    bi: ビ
-    bu: ブ
-    be: ベ
-    bo: ボ
-    bya: ビャ
-    byu: ビュ
-    byo: ビョ
-    pa: パ
-    pi: ピ
-    pu: プ
-    pe: ペ
-    po: ポ
-    pya: ピャ
-    pyu: ピュ
-    pyo: ピョ
+    mapping: { Katakana: Romaji }
+    ガ: ga
+    ギ: gi
+    グ: gu
+    ゲ: ge
+    ゴ: go
+    ギャ: gya
+    ギュ: gyu
+    ギョ: gyo
+    ザ: za
+    ジ: ji
+    ズ: zu
+    ゼ: ze
+    ゾ: zo
+    ジャ: ja
+    ジュ: ju
+    ジョ: jo
+    ダ: da
+    ヂ: ji
+    ヅ: zu
+    デ: de
+    ド: do
+    ヂャ: ja
+    ヂュ: ju
+    ヂョ: jo
+    バ: ba
+    ビ: bi
+    ブ: bu
+    ベ: be
+    ボ: bo
+    ビャ: bya
+    ビュ: byu
+    ビョ: byo
+    パ: pa
+    ピ: pi
+    プ: pu
+    ペ: pe
+    ポ: po
+    ピャ: pya
+    ピュ: pyu
+    ピョ: pyo
   Katakana Keyboard Mappings:
-    mapping: { Romaji: Katakana }
-    a: ア
-    i: イ
-    u: ウ
-    e: エ
-    o: オ
-    "-": ー
-    xa: ァ
-    xi: ィ
-    xu: ゥ
-    xe: ェ
-    xo: ォ
-    ka: カ
-    ki: キ
-    ku: ク
-    ke: ケ
-    ko: コ
-    ca: カ
-    cu: ク
-    co: コ
-    ga: ガ
-    gi: ギ
-    gu: グ
-    ge: ゲ
-    go: ゴ
-    sa: サ
-    si: シ
-    su: ス
-    se: セ
-    so: ソ
-    za: ザ
-    zi: ジ
-    zu: ズ
-    ze: ゼ
-    zo: ゾ
-    ja: ジャ
-    ji: ジ
-    ju: ジュ
-    je: ジェ
-    jo: ジョ
-    ta: タ
-    ti: チ
-    tu: ツ
-    te: テ
-    to: ト
-    da: ダ
-    di: ヂ
-    du: ヅ
-    de: デ
-    do: ド
-    na: ナ
-    ni: ニ
-    nu: ヌ
-    ne: ネ
-    'no': ノ
-    ha: ハ
-    hi: ヒ
-    hu: フ
-    he: ヘ
-    ho: ホ
-    ba: バ
-    bi: ビ
-    bu: ブ
-    be: ベ
-    bo: ボ
-    pa: パ
-    pi: ピ
-    pu: プ
-    pe: ペ
-    po: ポ
-    va: ヴァ
-    vi: ヴィ
-    vu: ヴ
-    ve: ヴェ
-    vo: ヴォ
-    fa: ファ
-    fi: フィ
-    fu: フ
-    fe: フェ
-    fo: フォ
-    ma: マ
-    mi: ミ
-    mu: ム
-    me: メ
-    mo: モ
-    ya: ヤ
-    yi: イ
-    yu: ユ
-    ye: イェ
-    yo: ヨ
-    ra: ラ
-    ri: リ
-    ru: ル
-    re: レ
-    ro: ロ
-    la: ラ
-    li: リ
-    lu: ル
-    le: レ
-    lo: ロ
-    wa: ワ
-    wi: ウィ
-    wu: ウ
-    we: ウェ
-    wo: ヲ
-    nn: ン
-    n: ン
-    tsu: ツ
-    xka: ヵ
-    xke: ヶ
-    xwa: ヮ
-    xtsu: ッ
-    xya: ャ
-    xyu: ュ
-    xyo: ョ
-    kya: キャ
-    kyi: キィ
-    kyu: キュ
-    kye: キェ
-    kyo: キョ
-    gya: ギャ
-    gyi: ギィ
-    gyu: ギュ
-    gye: ギェ
-    gyo: ギョ
-    sya: シャ
-    syi: シィ
-    syu: シュ
-    sye: シェ
-    syo: ショ
-    sha: シャ
-    shi: シ
-    shu: シュ
-    she: シェ
-    sho: ショ
-    zya: ジャ
-    zyi: ジィ
-    zyu: ジュ
-    zye: ジェ
-    zyo: ジョ
-    jya: ジャ
-    jyi: ジィ
-    jyu: ジュ
-    jye: ジェ
-    jyo: ジョ
-    tya: チャ
-    tyi: チィ
-    tyu: チュ
-    tye: チェ
-    tyo: チョ
-    twa: トァ
-    twi: トィ
-    twu: トゥ
-    twe: トェ
-    two: トォ
-    dwa: ドァ
-    dwi: ドィ
-    dwu: ドゥ
-    dwe: ドェ
-    dwo: ドォ
-    cya: チャ
-    cyi: チィ
-    cyu: チュ
-    cye: チェ
-    cyo: チョ
-    cha: チャ
-    chi: チ
-    chu: チュ
-    che: チェ
-    cho: チョ
-    tha: テャ
-    thi: ティ
-    thu: テュ
-    the: テェ
-    tho: テョ
-    dya: ヂャ
-    dyi: ヂィ
-    dyu: ヂュ
-    dye: ヂェ
-    dyo: ヂョ
-    dha: デャ
-    dhi: ディ
-    dhu: デュ
-    dhe: デェ
-    dho: デョ
-    nya: ニャ
-    nyi: ニィ
-    nyu: ニュ
-    nye: ニェ
-    nyo: ニョ
-    hya: ヒャ
-    hyi: ヒィ
-    hyu: ヒュ
-    hye: ヒェ
-    hyo: ヒョ
-    bya: ビャ
-    byi: ビィ
-    byu: ビュ
-    bye: ビェ
-    byo: ビョ
-    pya: ピャ
-    pyi: ピィ
-    pyu: ピュ
-    pye: ピェ
-    pyo: ピョ
-    mya: ミャ
-    myi: ミィ
-    myu: ミュ
-    mye: ミェ
-    myo: ミョ
-    rya: リャ
-    ryi: リィ
-    ryu: リュ
-    rye: リェ
-    ryo: リョ
-    lya: リャ
-    lyi: リィ
-    lyu: リュ
-    lye: リェ
-    lyo: リョ
+    mapping: { Katakana: Romaji }
+    ア: a
+    イ: i
+    ウ: u
+    エ: e
+    オ: o
+    ー: '-'
+    ァ: xa
+    ィ: xi
+    ゥ: xu
+    ェ: xe
+    ォ: xo
+    カ: ka
+    キ: ki
+    ク: ku
+    ケ: ke
+    コ: ko
+    カ: ca
+    ク: cu
+    コ: co
+    ガ: ga
+    ギ: gi
+    グ: gu
+    ゲ: ge
+    ゴ: go
+    サ: sa
+    シ: si
+    ス: su
+    セ: se
+    ソ: so
+    ザ: za
+    ジ: zi
+    ズ: zu
+    ゼ: ze
+    ゾ: zo
+    ジャ: ja
+    ジ: ji
+    ジュ: ju
+    ジェ: je
+    ジョ: jo
+    タ: ta
+    チ: ti
+    ツ: tu
+    テ: te
+    ト: to
+    ダ: da
+    ヂ: di
+    ヅ: du
+    デ: de
+    ド: do
+    ナ: na
+    ニ: ni
+    ヌ: nu
+    ネ: ne
+    ノ: 'no'
+    ハ: ha
+    ヒ: hi
+    フ: hu
+    ヘ: he
+    ホ: ho
+    バ: ba
+    ビ: bi
+    ブ: bu
+    ベ: be
+    ボ: bo
+    パ: pa
+    ピ: pi
+    プ: pu
+    ペ: pe
+    ポ: po
+    ヴァ: va
+    ヴィ: vi
+    ヴ: vu
+    ヴェ: ve
+    ヴォ: vo
+    ファ: fa
+    フィ: fi
+    フ: fu
+    フェ: fe
+    フォ: fo
+    マ: ma
+    ミ: mi
+    ム: mu
+    メ: me
+    モ: mo
+    ヤ: ya
+    イ: yi
+    ユ: yu
+    イェ: ye
+    ヨ: yo
+    ラ: ra
+    リ: ri
+    ル: ru
+    レ: re
+    ロ: ro
+    ラ: la
+    リ: li
+    ル: lu
+    レ: le
+    ロ: lo
+    ワ: wa
+    ウィ: wi
+    ウ: wu
+    ウェ: we
+    ヲ: wo
+    ン: [nn, n]
+    ツ: tsu
+    ヵ: xka
+    ヶ: xke
+    ヮ: xwa
+    ッ: xtsu 
+    ャ: xya
+    ュ: xyu
+    ョ: xyo
+    キャ: kya
+    キィ: kyi
+    キュ: kyu
+    キェ: kye
+    キョ: kyo
+    ギャ: gya
+    ギィ: gyi
+    ギュ: gyu
+    ギェ: gye
+    ギョ: gyo
+    シャ: sya
+    シィ: syi
+    シュ: syu
+    シェ: sye
+    ショ: syo
+    シャ: sha
+    シ: shi
+    シュ: shu
+    シェ: she
+    ショ: sho
+    ジャ: zya
+    ジィ: zyi
+    ジュ: zyu
+    ジェ: zye
+    ジョ: zyo
+    ジャ: jya
+    ジィ: jyi
+    ジュ: jyu
+    ジェ: jye
+    ジョ: jyo
+    チャ: tya
+    チィ: tyi
+    チュ: tyu
+    チェ: tye
+    チョ: tyo
+    トァ: twa
+    トィ: twi
+    トゥ: twu
+    トェ: twe
+    トォ: two
+    ドァ: dwa
+    ドィ: dwi
+    ドゥ: dwu
+    ドェ: dwe
+    ドォ: dwo
+    チャ: cya
+    チィ: cyi
+    チュ: cyu
+    チェ: cye
+    チョ: cyo
+    チャ: cha
+    チ: chi
+    チュ: chu
+    チェ: che
+    チョ: cho
+    テャ: tha
+    ティ: thi
+    テュ: thu
+    テェ: the
+    テョ: tho
+    ヂャ: dya
+    ヂィ: dyi
+    ヂュ: dyu
+    ヂェ: dye
+    ヂョ: dyo
+    デャ: dha
+    ディ: dhi
+    デュ: dhu
+    デェ: dhe
+    デョ: dho
+    ニャ: nya
+    ニィ: nyi
+    ニュ: nyu
+    ニェ: nye
+    ニョ: nyo
+    ヒャ: hya
+    ヒィ: hyi
+    ヒュ: hyu
+    ヒェ: hye
+    ヒョ: hyo
+    ビャ: bya
+    ビィ: byi
+    ビュ: byu
+    ビェ: bye
+    ビョ: byo
+    ピャ: pya
+    ピィ: pyi
+    ピュ: pyu
+    ピェ: pye
+    ピョ: pyo
+    ミャ: mya
+    ミィ: myi
+    ミュ: myu
+    ミェ: mye
+    ミョ: myo
+    リャ: rya
+    リィ: ryi
+    リュ: ryu
+    リェ: rye
+    リョ: ryo
+    リャ: lya
+    リィ: lyi
+    リュ: lyu
+    リェ: lye
+    リョ: lyo

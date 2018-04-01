@@ -60,12 +60,19 @@ module LanguageCards
 
             def incorrect_msg
               output = "#{I18n.t('Game.Incorrect')} #{input} != #{display}"
-              output << " #{I18n.t('Game.Its')} #{expected}" if mode == :translate
+              output << " #{I18n.t('Game.Its')} #{expected.join(', ')}" if mode == :translate
               output
             end
 
             def valid?
-              !!(expected == input)
+              case mode
+              when :translate
+                expected.any? {|value| value == input }
+              when :typing_practice
+                !!(expected == input)
+              else
+                raise "Invalid mode in Game Controller!"
+              end
             end
           end
         end

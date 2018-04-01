@@ -4,7 +4,7 @@ module LanguageCards
     attr_reader :translation
     def initialize grapheme, translation
       @grapheme = grapheme
-      @translation = translation
+      @translation = Array(translation)
     end
 
     def display
