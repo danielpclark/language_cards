@@ -10,6 +10,6 @@ class GraphemeTest < Minitest::Test
 
   def test_defaults
     assert_equal 'く', "#{grapheme}"
-    assert_equal 'ku', grapheme.translation
+    assert_equal 'ku', *grapheme.translation
   end
 end
