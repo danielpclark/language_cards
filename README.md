@@ -32,46 +32,27 @@ Or install it yourself as:
 ## Usage
 
 After installing the gem you can run the executable `language_cards`.  If you clone the repo then use
-`bin/language_cards`.
+`bundle exec bin/language_cards`.
 
 # Card Format
 
 The cards are stored in YAML format.  You can look in the `cards` directory for existing examples to follow.
-The first entry is a lnaguage name and it's okay if that already exists in another file.  The entries below that
+The first entry is a language name and it's okay if that already exists in another file.  The entries below that
 must be unique for that language (eg: you can't have two Hiragana sub entries on Japanese).  The next step in
-will have a mapping hash with exactly two entries.  The first mapping entry is how the language is being mapped
-from key to value (eg "Romaji" => "Hiragana").  The next mapping entry is the representation of how this is to be
-mapped; the how is for whether you want to do a translation mapping key to value, or keyboard practice mapping
-value to value.  This part of the mapping must be with the symbol entries of :k or :v.  Along with the mapping
-entry you may puts all the keys and values for your cards.  Just follow the below outline for a working example.
+will have a mapping hash on how the language is being mapped in the form of key to value (eg "Romaji" => "Hiragana").
+Just follow the below outline for a working example.
 
 ```yaml
 ---
 Japanese:
   Hiragana:
-    mapping:
-      - Romaji: Hiragana
-        index: 
-          - :k
-          - :v
-      - Hiragana: Hiragana
-        index: 
-          - :v
-          - :v
+    mapping: { Romaji: Hiragana }
     a: あ
     i: い
     u: う
     e: え
     o: お
 ```
-
-In the example above we allow two mappings (game modes as-it-were).  The first mapping is a translation mapping
-for people to write romaji to solve the Hiragana character, and the second is to actually type the Hiragana
-character in.  As you can see the entries for the cards are bellow at the same level as mapping.
-
-The first entry Japanese can be in any other cards file.  The next level in where "Hiragana" is must be unique to
-the language Japanese and only in one file.  If you mess up the mapping the error messages will be very clear
-about it.  You may enter either one mapping, or two.
 
 ## Development
 
