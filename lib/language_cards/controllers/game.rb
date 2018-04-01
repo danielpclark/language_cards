@@ -6,7 +6,7 @@ module LanguageCards
         include Helpers::GameHelper
 
         def render(correct:, incorrect:, title:, timer:, last:)
-          _score = t('Game.ScoreMenu.Score') + ": %0.2d%" % calc_score(correct, incorrect)
+          _score = t('Game.ScoreMenu.Score') + ": %0.2d%%" % calc_score(correct, incorrect)
           _timer = [((t('Timer.Timer') + ": " + timer.ha) if timer.time?), nil, timer.h]
           _mexit = t 'Menu.Exit'
 
@@ -16,8 +16,8 @@ module LanguageCards
           view.result(binding)
         end
 
-        def process(card_collection, mode)
-          ic = struct_data.new(card_collection, mode.peek)
+        def process(cards, mode)
+          ic = struct_data.new(cards, mode)
           ic.get_input
           {
             correct: ic.valid?,
@@ -32,19 +32,26 @@ module LanguageCards
             end
 
             def get_input
-              @input ||= CLI.ask("#{I18n.t('Game.TypeThis')} #{collection.mapped_as}: #{display}")
+              @input ||= CLI.ask("#{I18n.t('Game.TypeThis')}: #{display}")
             end
 
-            def comp_bitz
-              @comp_bitz ||= collection.rand
+            def card
+              @card ||= collection.sample
             end
 
             def display
-              comp_bitz.display
+              "#{card}"
             end
 
             def expected
-              comp_bitz.expected
+              case mode
+              when :translate
+                card.translation
+              when :typing_practice
+                 "#{card}" 
+              else
+                raise "Invalid mode in Game Controller!"
+              end
             end
 
             def correct_msg
@@ -58,7 +65,7 @@ module LanguageCards
             end
 
             def valid?
-              collection.correct?(input, comp_bitz)
+              !!(expected == input)
             end
           end
         end

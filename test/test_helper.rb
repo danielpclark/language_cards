@@ -4,7 +4,7 @@ SimpleCov.start
 require 'open3'
 require 'language_cards'
 require 'minitest/autorun'
-require_relative 'support'
+require 'support'
 
 class Minitest::Test
   include Support

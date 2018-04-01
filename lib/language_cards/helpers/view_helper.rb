@@ -19,6 +19,10 @@ module LanguageCards
       def clear
         printf ::LanguageCards::ESC::CLEAR
       end
+
+      def humanize string
+        "#{string}".split('_').map(&:capitalize).join(' ')
+      end
     end
   end
 end

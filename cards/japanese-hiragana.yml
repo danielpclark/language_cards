@@ -1,15 +1,7 @@
 --- # https://en.wikibooks.org/wiki/Japanese/Kana_chart
 Japanese:
   Hiragana:
-    mapping:
-      - Romaji: Hiragana
-        index:
-          - :k
-          - :v
-      - Hiragana: Hiragana
-        index:
-          - :v
-          - :v
+    mapping: { Romaji: Hiragana }
     a: あ # ✓
     i: い # ✓
     u: う # ✓
@@ -112,15 +104,7 @@ Japanese:
     ryu: りゅ # ✓
     ryo: りょ # ✓
   Hiragana Diacritics: # https://en.wikipedia.org/wiki/Hiragana
-    mapping:
-      - Romaji: Hiragana
-        index:
-          - :k
-          - :v
-      - Hiragana: Hiragana
-        index:
-          - :v
-          - :v
+    mapping: { Romaji: Hiragana }
     ga: が
     gi: ぎ
     gu: ぐ

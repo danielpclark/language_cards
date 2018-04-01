@@ -1,8 +1,8 @@
-require_relative 'timer'
-require_relative 'helpers/view_helper'
-require_relative 'helpers/game_helper'
-require_relative 'controllers/main_menu'
-require_relative 'controllers/game'
+require 'language_cards/timer'
+require 'language_cards/helpers/view_helper'
+require 'language_cards/helpers/game_helper'
+require 'language_cards/controllers/main_menu'
+require 'language_cards/controllers/game'
 require 'erb'
 
 module LanguageCards
@@ -11,8 +11,8 @@ module LanguageCards
     include Controllers
     def initialize cards
       @cards = cards
-      @courses = cards.classes
-      @mode = [:translate, :typing].cycle
+      @courses = cards.flat_map {|i| i.label.join(' - ') }
+      @mode = [:translate, :typing_practice].cycle
     end
 
     def start
@@ -36,21 +36,21 @@ module LanguageCards
           last = nil
           if (0..courses.length-1).include? value
 
-            collection = value.
-              ᐅ( method :courses ).
-              ᐅ cards.method(:select_collection)
+            collection = cards[value] # MenuNode
+            title = "#{collection.title} (#{humanize mode.peek})"
+            collection = collection.mode(mode.peek) # Mode<CardSet> < Game
 
             timer = Timer.new
-            begin
+            begin # Game Loop
               loop do
                 clear
                 timer.mark
                 CLI.say Game.render correct: correct,
                                     incorrect: incorrect,
-                                    title: collection.name,
+                                    title: title,
                                     timer: timer,
                                     last: last
-                result = Game.process(collection, mode)
+                result = Game.process(collection, collection.mode)
                 result[:correct] ? correct! : incorrect!
                 last = result[:last]
               end
@@ -64,22 +64,13 @@ module LanguageCards
     end
 
     private
-    attr_reader :mode, :cards, :correct, :incorrect
+    attr_reader :mode, :cards, :correct, :incorrect, :courses
     def correct!
       @correct = @correct.to_i + 1
     end
 
     def incorrect!
       @incorrect = @incorrect.to_i + 1
-    end
-
-    def courses(value = nil)
-      courses = @courses.select {|c| detect_course_mode(c) == mode.peek }
-      value ? courses[value] : courses
-    end
-
-    def detect_course_mode str
-      str.split(JOIN).last.split(" => ").inject(:==) ? :typing : :translate
     end
   end
 end

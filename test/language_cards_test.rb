@@ -21,7 +21,7 @@ class LanguageCardsTest < Minitest::Test
 
   def test_cards_load
     cc = LanguageCards::LanguageCards.new.instance_variable_get(:@CARDS)
-    assert_kind_of LanguageCards::CardCollection, cc
-    assert cc.classes.detect {|i| /Japanese/ === i}
+    assert_kind_of LanguageCards::MenuNode, cc.first
+    assert cc.detect {|i| /Japanese/ === "#{i}"}
   end
 end

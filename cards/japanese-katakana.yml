@@ -1,15 +1,7 @@
 --- # https://en.wikibooks.org/wiki/Japanese/Kana_chart
 Japanese:
   Katakana:
-    mapping:
-      - Romaji: Katakana
-        index:
-          - :k
-          - :v
-      - Katakana: Katakana
-        index:
-          - :v
-          - :v
+    mapping: { Romaji: Katakana }
     a: ア # ✓
     i: イ # ✓
     u: ウ # ✓
@@ -111,15 +103,7 @@ Japanese:
     ryu: リュ # ✓
     ryo: リョ # ✓
   Katakana Diacritics: # https://en.wikipedia.org/wiki/Katakana
-    mapping:
-      - Romaji: Katakana
-        index:
-          - :k
-          - :v
-      - Katakana: Katakana
-        index:
-          - :v
-          - :v
+    mapping: { Romaji: Katakana }
     ga: ガ
     gi: ギ
     gu: グ
@@ -161,15 +145,7 @@ Japanese:
     pyu: ピュ
     pyo: ピョ
   Katakana Keyboard Mappings:
-    mapping:
-      - Romaji: Katakana
-        index:
-          - :k
-          - :v
-      - Katakana: Katakana
-        index:
-          - :v
-          - :v
+    mapping: { Romaji: Katakana }
     a: ア
     i: イ
     u: ウ

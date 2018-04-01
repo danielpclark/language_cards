@@ -24,8 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "highline", "~> 1.7"
   spec.add_dependency "i18n", "~> 0.7"
   spec.add_dependency "elixirize", "~> 0.3"
-  # spec.add_dependency "hamster", "~> 3.0" # MAYBE ADD IN FUTURE
   spec.add_development_dependency "bundler", "~> 1.13"
-  spec.add_development_dependency "rake", "~> 12.0"
+  spec.add_development_dependency "rake", "~> 12.3"
   spec.add_development_dependency "minitest", "~> 5.10"
 end
