@@ -15,6 +15,7 @@ module LanguageCards
       # @return Grapheme Returns a random grapheme
       def sample
         @current = @card_set.sample
+        self
       end
 
       # Iterator for cycling through all translations sequentially.

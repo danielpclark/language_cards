@@ -26,7 +26,7 @@ module LanguageCards
         end
 
         def struct_data
-          Struct.new(:collection, :mode) do
+          Struct.new(:card_set, :mode) do
             def input
               @input 
             end
@@ -36,7 +36,7 @@ module LanguageCards
             end
 
             def card
-              @card ||= collection.sample
+              @card ||= card_set.sample.current
             end
 
             def display
@@ -65,14 +65,7 @@ module LanguageCards
             end
 
             def valid?
-              case mode
-              when :translate
-                expected.any? {|value| value == input }
-              when :typing_practice
-                !!(expected == input)
-              else
-                raise "Invalid mode in Game Controller!"
-              end
+              card_set.match? input
             end
           end
         end
