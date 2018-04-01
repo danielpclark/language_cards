@@ -5,7 +5,7 @@ include LanguageCards
 class CardSetTest < Minitest::Test
   attr_reader :card_set
   def setup
-    @card_set = CardSet.new({'ku' => 'く'})
+    @card_set = CardSet.new({'く' => 'ku'})
   end
 
   def test_creates_collection

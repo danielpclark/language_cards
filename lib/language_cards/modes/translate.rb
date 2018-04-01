@@ -3,7 +3,7 @@ module LanguageCards
   module Modes
     class Translate < Game
       def match? input
-        current.translation == input
+        current.translation.any? {|value| value == input }
       end
 
       def mode

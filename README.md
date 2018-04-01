@@ -39,19 +39,19 @@ After installing the gem you can run the executable `language_cards`.  If you cl
 The cards are stored in YAML format.  You can look in the `cards` directory for existing examples to follow.
 The first entry is a language name and it's okay if that already exists in another file.  The entries below that
 must be unique for that language (eg: you can't have two Hiragana sub entries on Japanese).  The next step in
-will have a mapping hash on how the language is being mapped in the form of key to value (eg "Romaji" => "Hiragana").
+will have a mapping hash on how the language is being mapped in the form of key to value (eg "Hiragana" => "Romaji").
 Just follow the below outline for a working example.
 
 ```yaml
 ---
 Japanese:
   Hiragana:
-    mapping: { Romaji: Hiragana }
-    a: あ
-    i: い
-    u: う
-    e: え
-    o: お
+    mapping: { Hiragana: Romaji }
+    あ: a
+    い: i
+    う: u
+    え: e
+    お: o
 ```
 
 ## Development

@@ -26,7 +26,7 @@ module LanguageCards
         end
 
         def struct_data
-          Struct.new(:collection, :mode) do
+          Struct.new(:card_set, :mode) do
             def input
               @input 
             end
@@ -36,7 +36,7 @@ module LanguageCards
             end
 
             def card
-              @card ||= collection.sample
+              @card ||= card_set.sample.current
             end
 
             def display
@@ -60,12 +60,12 @@ module LanguageCards
 
             def incorrect_msg
               output = "#{I18n.t('Game.Incorrect')} #{input} != #{display}"
-              output << " #{I18n.t('Game.Its')} #{expected}" if mode == :translate
+              output << " #{I18n.t('Game.Its')} #{expected.join(', ')}" if mode == :translate
               output
             end
 
             def valid?
-              !!(expected == input)
+              card_set.match? input
             end
           end
         end
