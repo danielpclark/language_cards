@@ -23,6 +23,10 @@ module LanguageCards
       def humanize string
         "#{string}".split('_').map(&:capitalize).join(' ')
       end
+
+      def wordwrap words
+        "#{words}".gsub(/(.{1,#{SUBMENUWIDTH - 7}})(\s+|\Z)/, "\\1\n\t").strip
+      end
     end
   end
 end
