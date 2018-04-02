@@ -1,0 +1,504 @@
+--- # http://kanjicards.org/kanji-list-by-freq.html
+Japanese:
+  Kanji (500 most frequent words):
+    mapping: { Kanji: [Hiragana, English] }
+    日: [ひ, day, sun, Japan, counter for days, sunshine, sunlight, case, event]
+    一: [ひと, ひとつ, one, only, even, 1]
+    国: [くに, country, state, region, province, home, hometown, homeland, home country, land, earth]
+    会: [かい, gathering, association, meeting, interview, meet, join, party]
+    人: [ひと, people, person, man, human being, other people, mankind]
+    年: [とし, year, counter for years, age]
+    大: [おお, large, big]
+    十: [じゅう, と, とお, ten, 10]
+    二: [に, ふた, ふ, ふう, two, 2]
+    本: [もと, book, present, main, 'true', real, counter for long cylindrical things]
+    中: [なか, in, inside, middle, mean, center]
+    長: [なが, long, leader]
+    出: [で, exit, leave]
+    三: [さん, three, 3]
+    同: [どう, same, agree, equal]
+    時: [じ, time, hour]
+    政: [まつりごと, rule, government, politics]
+    事: [こと, thing, matter, fact, circumstances, business, reason, experience, possibly]
+    自: [じ, oneself]
+    行: [こう, going, journey]
+    社: [やしろ, company, firm, office, association, shrine]
+    見: [み, see, hopes, chances, idea, opinion, look at, visible]
+    月: [つき, month, moon]
+    分: [ぶん, part, minute of time, segment, share, degree, one's lot, duty, understand, know, rate, 1%, chances, shaku/100]
+    議: [ぎ, deliberation, consultation, debate, consideration]
+    後: [あと, behind, back, later]
+    前: [まえ, in front, before]
+    民: [たみ, nation, people, subjects]
+    生: [なま, life, genuine, birth]
+    連: [れん, join, connect, party, gang, take along, clique, lead]
+    五: [ご, five, 5]
+    発: [はつ, departure, disclose, emit, counter for gunshots, start from, publish, discharge]
+    間: [ま, interval, space]
+    対: [たい, versus, even, compare, vis-a-vis, opposite, equal, anti-]
+    上: [うえ, above, up]
+    部: [ぶ, counter for copies of a newspaper or magazine, section, bureau, dept, class, copy, part, portion]
+    東: [ひがし, east]
+    者: [もの, someone, person]
+    党: [とう, party, faction, clique]
+    地: [ち, ground, earth, land, soil, place, territory, bottom]
+    合: [ごう, suit, 0.1, fit, join]
+    市: [し, market, city, town]
+    業: [ごう, business, vocation, arts, performance, karma]
+    内: [うち, inside, within, between, among, house, home, while, amongst]
+    相: [そう, phase, physiognomy, inter-, mutual, together, each other, minister of state, councillor, aspect]
+    方: [ほう, direction, person, alternative]
+    四: [よん, four, 4]
+    定: [ただし, fix, establish, decide, determine]
+    今: [いま, now, the present time, just now, soon, immediately, (one) more]
+    回: [かい, game, -times, counter for occurrences, revolve, round]
+    新: [しん, new]
+    場: [ば, location, place]
+    金: [きん, gold]
+    員: [-いん, employee, member, number, the one in charge]
+    九: [ここの, nine, 9]
+    入: [いり, enter, insert]
+    選: [せん, elect, select, choose, prefer, selection, choice, election, compilation, editing]
+    立: [たて, stand up]
+    開: [かい, unfold, unseal, open]
+    手: [て, hand]
+    米: [べい, rice, USA, metre]
+    力: [ちから, power, strong, strain, bear up, exert]
+    学: [がく, study, learning, science]
+    問: [もん, question, ask, problem]
+    高: [こう, tall, high, expensive]
+    代: [だい, fee, convert, age, charge, change, period, generation, rate, replace, counter for decades of ages, eras, etc., substitute]
+    明: [あきら, bright, light]
+    実: [じつ, じち, truth, reality, sincerity, honesty, fidelity, content, substance, good result]
+    円: [えん, circle, yen, round]
+    関: [せき, barrier, gate, concerning, connection, gateway, involve]
+    決: [けつ, decide, fix, agree upon, appoint]
+    子: [こ, child, sign of the rat, 11PM-1AM, first sign of Chinese zodiac]
+    動: [どう, move, motion, change, confusion, shift, shake]
+    京: [きょう, けい, capital, ten quadrillion, imperial capital]
+    全: [ぜん, whole, entire, all, complete, fulfill]
+    目: [め, eye, class, look, insight, experience, care, favor]
+    表: [おもて, chart, diagram, surface, table, foreground, front, face, front face, exterior, appearance, public]
+    戦: [いくさ, match, war, battle]
+    経: [きょう, expire, longitude, warp, pass thru, sutra, Buddhist scriptures]
+    通: [つう, avenue, counter for letters, notes, documents, etc., traffic, commute, pass through]
+    外: [ほか, outside, other, the rest]
+    最: [さい, utmost, most, extreme]
+    言: [げん, say]
+    氏: [うじ, clan, family name, surname, lineage, birth]
+    現: [げん, present, existing, actual]
+    理: [り, logic, arrangement, reason, justice, truth, principle]
+    調: [ちょう, tune, exorcise, tone, investigate, meter, music key, writing style, prepare]
+    体: [からだ, body, object, reality, counter for images, substance]
+    化: [ばけ, change, enchant, take the form of, delude, influence, -ization]
+    田: [た, rice field, rice paddy]
+    当: [とう, right, appropriate, himself, hit]
+    八: [はち, eight, 8]
+    六: [ろく, six, 6]
+    約: [やく, promise, approximately, shrink]
+    主: [ぬし, chief, principal, master, lord, main thing]
+    題: [だい, topic, subject]
+    下: [した, below, down, descend, give, low, inferior]
+    首: 
+    意: 
+    法: 
+    不: 
+    来: 
+    作: 
+    性: 
+    的: 
+    要: 
+    用: 
+    制: 
+    治: 
+    度: 
+    務: 
+    強: 
+    気: 
+    小: 
+    七: 
+    成: 
+    期: 
+    公: 
+    持: 
+    野: 
+    協: 
+    取: 
+    都: 
+    和: 
+    統: 
+    以: 
+    機: 
+    平: 
+    総: 
+    加: 
+    山: 
+    思: 
+    家: 
+    話: 
+    世: 
+    受: 
+    区: 
+    領: 
+    多: 
+    県: 
+    続: 
+    進: 
+    正: 
+    安: 
+    設: 
+    保: 
+    改: 
+    数: 
+    記: 
+    院: 
+    女: 
+    初: 
+    北: 
+    午: 
+    指: 
+    権: 
+    心: 
+    界: 
+    支: 
+    第: 
+    産: 
+    結: 
+    百: 
+    派: 
+    点: 
+    教: 
+    報: 
+    済: 
+    書: 
+    府: 
+    活: 
+    原: 
+    先: 
+    共: 
+    得: 
+    解: 
+    名: 
+    交: 
+    資: 
+    予: 
+    川: 
+    向: 
+    際: 
+    査: 
+    勝: 
+    面: 
+    委: 
+    告: 
+    軍: 
+    文: 
+    反: 
+    元: 
+    重: 
+    近: 
+    千: 
+    考: 
+    判: 
+    認: 
+    画: 
+    海: 
+    参: 
+    売: 
+    利: 
+    組: 
+    知: 
+    案: 
+    道: 
+    信: 
+    策: 
+    集: 
+    在: 
+    件: 
+    団: 
+    別: 
+    物: 
+    側: 
+    任: 
+    引: 
+    使: 
+    求: 
+    所: 
+    次: 
+    水: 
+    半: 
+    品: 
+    昨: 
+    論: 
+    計: 
+    死: 
+    官: 
+    増: 
+    係: 
+    感: 
+    特: 
+    情: 
+    投: 
+    示: 
+    変: 
+    打: 
+    男: 
+    基: 
+    私: 
+    各: 
+    始: 
+    島: 
+    直: 
+    両: 
+    朝: 
+    革: 
+    価: 
+    式: 
+    確: 
+    村: 
+    提: 
+    運: 
+    終: 
+    挙: 
+    果: 
+    西: 
+    勢: 
+    減: 
+    台: 
+    広: 
+    容: 
+    必: 
+    応: 
+    演: 
+    電: 
+    歳: 
+    住: 
+    争: 
+    談: 
+    能: 
+    無: 
+    再: 
+    位: 
+    置: 
+    企: 
+    真: 
+    流: 
+    格: 
+    有: 
+    疑: 
+    口: 
+    過: 
+    局: 
+    少: 
+    放: 
+    税: 
+    検: 
+    藤: 
+    町: 
+    常: 
+    校: 
+    料: 
+    沢: 
+    裁: 
+    状: 
+    工: 
+    建: 
+    語: 
+    球: 
+    営: 
+    空: 
+    職: 
+    証: 
+    土: 
+    与: 
+    急: 
+    止: 
+    送: 
+    援: 
+    供: 
+    可: 
+    役: 
+    構: 
+    木: 
+    割: 
+    聞: 
+    身: 
+    費: 
+    付: 
+    施: 
+    切: 
+    由: 
+    説: 
+    転: 
+    食: 
+    比: 
+    難: 
+    防: 
+    補: 
+    車: 
+    優: 
+    夫: 
+    研: 
+    収: 
+    断: 
+    井: 
+    何: 
+    南: 
+    石: 
+    足: 
+    違: 
+    消: 
+    境: 
+    神: 
+    番: 
+    規: 
+    術: 
+    護: 
+    展: 
+    態: 
+    導: 
+    鮮: 
+    備: 
+    宅: 
+    害: 
+    配: 
+    副: 
+    算: 
+    視: 
+    条: 
+    幹: 
+    独: 
+    警: 
+    宮: 
+    究: 
+    育: 
+    席: 
+    輸: 
+    訪: 
+    楽: 
+    起: 
+    万: 
+    着: 
+    乗: 
+    店: 
+    述: 
+    残: 
+    想: 
+    線: 
+    率: 
+    病: 
+    農: 
+    州: 
+    武: 
+    声: 
+    質: 
+    念: 
+    待: 
+    試: 
+    族: 
+    象: 
+    銀: 
+    域: 
+    助: 
+    労: 
+    例: 
+    衛: 
+    然: 
+    早: 
+    張: 
+    映: 
+    限: 
+    親: 
+    額: 
+    監: 
+    環: 
+    験: 
+    追: 
+    審: 
+    商: 
+    葉: 
+    義: 
+    伝: 
+    働: 
+    形: 
+    景: 
+    落: 
+    欧: 
+    担: 
+    好: 
+    退: 
+    準: 
+    賞: 
+    訴: 
+    辺: 
+    造: 
+    英: 
+    被: 
+    株: 
+    頭: 
+    技: 
+    低: 
+    毎: 
+    医: 
+    復: 
+    仕: 
+    去: 
+    姿: 
+    味: 
+    負: 
+    閣: 
+    韓: 
+    渡: 
+    失: 
+    移: 
+    差: 
+    衆: 
+    個: 
+    門: 
+    写: 
+    評: 
+    課: 
+    末: 
+    守: 
+    若: 
+    脳: 
+    極: 
+    種: 
+    美: 
+    岡: 
+    影: 
+    命: 
+    含: 
+    福: 
+    蔵: 
+    量: 
+    望: 
+    松: 
+    非: 
+    撃: 
+    佐: 
+    核: 
+    観: 
+    察: 
+    整: 
+    段: 
+    横: 
+    融: 
+    型: 
+    白: 
+    深: 
+    字: 
+    答: 
+    夜: 
+    製: 
+    票: 
+    況: 
+    音: 
+    申: 
+    様: 
+    財: 
+    港: 
+    識: 
+    注: 
+    呼: 
+    渉: 
+    達: 
