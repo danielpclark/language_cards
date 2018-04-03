@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserInterfaceTest < Minitest::Test
   def test_menu_contains_parts
-    mm = LanguageCards::Controllers::MainMenu.render(
+    mm = LanguageCards::Controllers::MainMenu.new.render(
       courses: ["Japanese"],
       mode: [:translate].cycle
     )
@@ -12,7 +12,7 @@ class UserInterfaceTest < Minitest::Test
   end
 
   def test_game_contains_parts
-    sm = LanguageCards::Controllers::Game.render(
+    sm = LanguageCards::Controllers::Game.new.render(
       correct: 1,
       incorrect: 2,
       title: 'Hiragana',

@@ -26,7 +26,7 @@ module LanguageCards
         loop do
           clear
 
-          CLI.say MainMenu.render courses: courses, mode: mode
+          CLI.say MainMenu.new.render courses: courses, mode: mode
 
           value = CLI.ask("")
 
@@ -40,17 +40,18 @@ module LanguageCards
             title = "#{collection.title} (#{humanize mode.peek})"
             collection = collection.mode(mode.peek) # Mode<CardSet> < Game
 
+            game = Game.new
             timer = Timer.new
             begin # Game Loop
               loop do
                 clear
                 timer.mark
-                CLI.say Game.render correct: correct,
+                CLI.say game.render correct: correct,
                                     incorrect: incorrect,
                                     title: title,
                                     timer: timer,
                                     last: last
-                result = Game.process(collection, collection.mode)
+                result = game.process(collection, collection.mode)
                 result[:correct] ? correct! : incorrect!
                 last = result[:last]
               end
