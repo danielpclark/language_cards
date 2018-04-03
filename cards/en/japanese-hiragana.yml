@@ -1,4 +1,5 @@
 --- # https://en.wikibooks.org/wiki/Japanese/Kana_chart
+# https://www.nayuki.io/page/variations-on-japanese-romanization
 Japanese:
   Hiragana:
     mapping: { Hiragana: Romaji }
@@ -25,9 +26,9 @@ Japanese:
     ず: zu
     ぜ: ze
     ぞ: zo
-    じゃ: ja
-    じゅ: ju
-    じょ: [jo, jyo]
+    じゃ: [zya, ja, jya]
+    じゅ: [zyu, ju, jyu]
+    じょ: [zyo, jo, jyo]
     た: ta 
     て: te 
     と: to 
@@ -53,7 +54,7 @@ Japanese:
     ぷ: pu
     ぺ: pe
     ぽ: po
-    ふ: fu
+    ふ: [hu, fu]
     ま: ma
     み: mi
     む: mu
@@ -70,21 +71,21 @@ Japanese:
     わ: wa
     を: wo
     ん: n
-    つ: tsu
+    つ: [tu, tsu]
     きゃ: kya
     きゅ: kyu
     きょ: kyo
     ぎゃ: gya
     ぎゅ: gyu
     ぎょ: gyo
-    しゃ: sha
-    し: shi
-    しゅ: shu
-    しょ: sho
-    ちゃ: cha
-    ち: chi
-    ちゅ: chu
-    ちょ: cho
+    しゃ: [sya, sha]
+    し: [si, shi]
+    しゅ: [syu, shu]
+    しょ: [syo, sho]
+    ちゃ: [tya, cha]
+    ち: [ti, chi]
+    ちゅ: [tyu, chu]
+    ちょ: [tyo, cho]
     にゃ: nya
     にゅ: nyu
     にょ: nyo
@@ -103,47 +104,10 @@ Japanese:
     りゃ: rya
     りゅ: ryu
     りょ: ryo
-  Hiragana Diacritics: # https://en.wikipedia.org/wiki/Hiragana
-    mapping: { Hiragana: Romaji }
-    が: ga
-    ぎ: gi
-    ぐ: gu
-    げ: ge
-    ご: go
-    ざ: za
-    じ: ji
-    ず: zu
-    ぜ: ze
-    ぞ: zo
-    だ: da
-    ぢ: ji
-    づ: zu
-    で: de
-    ど: do
-    ば: ba
-    び: bi
-    ぶ: bu
-    べ: be
-    ぼ: bo
-    ぱ: pa
-    ぴ: pi
-    ぷ: pu
-    ぺ: pe
-    ぽ: po
+    じ: [zi, ji]
+    ぢ: [di, ji, dji]
+    づ: [du, zu, dzu]
     ゔ: vu # https://en.wiktionary.org/wiki/%E3%82%94
-    ぎゃ: gya
-    ぎゅ: gyu
-    ぎょ: gyo
-    じゃ: ja
-    じゅ: ju
-    じょ: jo
-    ぢゃ: ja
-    ぢゅ: ju
-    ぢょ: jo
-    びゃ: bya
-    びゅ: byu
-    びょ: byo
-    ぴゃ: pya
-    ぴゅ: pyu
-    ぴょ: pyo
-
+    ぢゃ: [dya, ja, dja]
+    ぢゅ: [dyu, ju, dju]
+    ぢょ: [dyo, jo, djo]
