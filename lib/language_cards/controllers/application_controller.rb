@@ -4,9 +4,7 @@ module LanguageCards
       include Helpers::ViewHelper
 
       def render(_binding)
-        view = File.expand_path("../view/#{snake name}.erb", __dir__).
-          ᐅ( IO.method :read ).
-          ᐅ ERB.method :new
+        view = ERB.new IO.read File.expand_path("../view/#{snake name}.erb", __dir__)
 
         view.result(_binding)
       end
