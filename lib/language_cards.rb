@@ -10,9 +10,10 @@ require 'elixirize'
 #  * Implement score-keeper
 #  * Race against the clock
 #  * Weighted random for better learning
-#  * Value to Value is simply keyboard practice and should be clocked
 
 module LanguageCards
+  CARD_LANGUAGE = 'en'
+
   module ESC
     CLEAR = (ERASE_SCOLLBACK = "\e[3J") + (CURSOR_HOME = "\e[H") + (ERASE_DISPLAY = "\e[2J")
   end
