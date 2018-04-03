@@ -11,7 +11,7 @@ module LanguageCards
     include Controllers
     def initialize cards
       @cards = cards
-      @courses = cards.flat_map {|i| i.label.join(' - ') }
+      @courses = process_courses(cards)
       @mode = [:translate, :typing_practice].cycle
     end
 
@@ -26,7 +26,7 @@ module LanguageCards
         loop do
           clear
 
-          CLI.say MainMenu.new.render courses: courses, mode: mode
+          CLI.say MainMenu.new(opts).render courses: courses, mode: mode
 
           value = CLI.ask("")
 
@@ -40,7 +40,7 @@ module LanguageCards
             title = "#{collection.title} (#{humanize mode.peek})"
             collection = collection.mode(mode.peek) # Mode<CardSet> < Game
 
-            game = Game.new
+            game = Game.new(opts)
             timer = Timer.new
             begin # Game Loop
               loop do
@@ -66,12 +66,26 @@ module LanguageCards
 
     private
     attr_reader :mode, :cards, :correct, :incorrect, :courses
+    def opts
+      @opts ||= {}
+    end
+
     def correct!
       @correct = @correct.to_i + 1
     end
 
     def incorrect!
       @incorrect = @incorrect.to_i + 1
+    end
+
+    def process_courses(cards)
+      courses = cards.flat_map {|i| i.label.join(' - ') }
+
+      if courses.empty?
+        opts[:errors] = ["No Flash Cards found for language: #{CARD_LANGUAGE}"]
+      end
+
+      courses
     end
   end
 end

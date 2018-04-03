@@ -2,7 +2,7 @@
 <%= draw(_title, nil, 'v' + VERSION) %>
 <%= divider %>
 <%= draw(_select, nil, _mode) %>
-<% _courses.each do |course| %>
+<% (_courses.empty? ? errors : _courses).each do |course| %>
   <%= course.chomp %><% end %>
 
 <%= draw(_mexit, nil, _toggle) %>

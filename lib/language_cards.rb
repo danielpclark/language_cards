@@ -2,6 +2,7 @@ require 'language_cards/version'
 require 'language_cards/language_cards'
 require 'yaml'
 require 'i18n'
+require 'slop'
 require 'highline'
 
 ##
@@ -11,7 +12,11 @@ require 'highline'
 #  * Weighted random for better learning
 
 module LanguageCards
-  CARD_LANGUAGE = 'en'
+  OPTS = Slop.parse do |args|
+    args.string '-l', '--language', 'language (default: en)', default: 'en'
+  end
+
+  CARD_LANGUAGE = OPTS[:language]
 
   module ESC
     CLEAR = (ERASE_SCOLLBACK = "\e[3J") + (CURSOR_HOME = "\e[H") + (ERASE_DISPLAY = "\e[2J")
