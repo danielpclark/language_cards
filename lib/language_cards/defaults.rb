@@ -14,7 +14,7 @@ module LanguageCards
   end
 
   CLI = HighLine.new
-  JOIN = " : "
+  JOIN = " - "
 
   SUBMENUWIDTH = 60
 

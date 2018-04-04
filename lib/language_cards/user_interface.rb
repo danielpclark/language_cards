@@ -78,7 +78,7 @@ module LanguageCards
     end
 
     def process_courses(menu_items)
-      courses = menu_items.flat_map {|i| i.label.join(' - ') }
+      courses = menu_items.flat_map {|i| i.label.join(JOIN) }
 
       if courses.empty?
         opts[:errors] = ["No Flash Cards found for language: #{CARD_LANGUAGE}"]

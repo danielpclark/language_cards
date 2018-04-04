@@ -12,7 +12,7 @@ module LanguageCards
       end
     end
 
-    def title(fmt = ' - ', rng = 0..-1)
+    def title(fmt = JOIN, rng = 0..-1)
       label[rng].delete_if(&:empty?).join(fmt)
     end
 
@@ -29,7 +29,7 @@ module LanguageCards
     end
 
     def to_s
-      label.delete_if(&:empty?).join(' - ')
+      label.delete_if(&:empty?).join(JOIN)
     end
 
     private
