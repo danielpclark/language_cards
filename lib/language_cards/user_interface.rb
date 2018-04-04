@@ -50,7 +50,7 @@ module LanguageCards
                                     title: title,
                                     timer: timer,
                                     last: last
-                result = game.process(collection, collection.mode)
+                result = game.process(collection)
                 result[:correct] ? correct! : incorrect!
                 last = result[:last]
               end

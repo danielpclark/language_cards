@@ -13,8 +13,8 @@ module LanguageCards
         super(binding)
       end
 
-      def process(cards, mode)
-        ic = struct_data.new(cards, mode)
+      def process(cards)
+        ic = struct_data.new(cards)
         ic.get_input
         {
           correct: ic.valid?,
@@ -23,7 +23,7 @@ module LanguageCards
       end
 
       def struct_data
-        Struct.new(:game, :mode) do
+        Struct.new(:game) do
           def input
             @input 
           end
@@ -38,6 +38,10 @@ module LanguageCards
 
           def display
             "#{card}"
+          end
+
+          def mode
+            game.mode
           end
 
           def expected
