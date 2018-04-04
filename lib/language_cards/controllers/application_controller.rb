@@ -1,3 +1,5 @@
+require 'erb'
+
 module LanguageCards
   module Controllers
     class ApplicationController

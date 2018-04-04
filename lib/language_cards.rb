@@ -12,6 +12,8 @@ require 'language_cards/menu_builder'
 
 module LanguageCards
   def self.start
-    UserInterface.new(menu_builder YAMLLoader.new.load).start
+    yaml = YAMLLoader.new.load
+    menu = menu_builder(yaml)
+    UserInterface.new(menu).start
   end
 end

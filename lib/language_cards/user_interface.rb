@@ -3,15 +3,14 @@ require 'language_cards/helpers/view_helper'
 require 'language_cards/helpers/game_helper'
 require 'language_cards/controllers/main_menu'
 require 'language_cards/controllers/game'
-require 'erb'
 
 module LanguageCards
   class UserInterface
     include Helpers::ViewHelper
     include Controllers
-    def initialize cards
-      @cards = cards
-      @courses = process_courses(cards)
+    def initialize menu_items
+      @menu_items = menu_items
+      @courses = process_courses(menu_items)
       @mode = [:translate, :typing_practice].cycle
     end
 
@@ -36,7 +35,7 @@ module LanguageCards
           last = nil
           if (0..courses.length-1).include? value
 
-            collection = cards[value] # MenuNode
+            collection = menu_items[value] # MenuNode
             title = "#{collection.title} (#{humanize mode.peek})"
             collection = collection.mode(mode.peek) # Mode<CardSet> < Game
 
@@ -65,7 +64,7 @@ module LanguageCards
     end
 
     private
-    attr_reader :mode, :cards, :correct, :incorrect, :courses
+    attr_reader :mode, :menu_items, :correct, :incorrect, :courses
     def opts
       @opts ||= {}
     end
@@ -78,8 +77,8 @@ module LanguageCards
       @incorrect = @incorrect.to_i + 1
     end
 
-    def process_courses(cards)
-      courses = cards.flat_map {|i| i.label.join(' - ') }
+    def process_courses(menu_items)
+      courses = menu_items.flat_map {|i| i.label.join(' - ') }
 
       if courses.empty?
         opts[:errors] = ["No Flash Cards found for language: #{CARD_LANGUAGE}"]
