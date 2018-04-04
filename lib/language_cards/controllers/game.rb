@@ -23,7 +23,7 @@ module LanguageCards
       end
 
       def struct_data
-        Struct.new(:card_set, :mode) do
+        Struct.new(:game, :mode) do
           def input
             @input 
           end
@@ -33,7 +33,7 @@ module LanguageCards
           end
 
           def card
-            @card ||= card_set.sample.current
+            @card ||= game.sample.current
           end
 
           def display
@@ -62,7 +62,7 @@ module LanguageCards
           end
 
           def valid?
-            card_set.match? input
+            game.match? input
           end
         end
       end

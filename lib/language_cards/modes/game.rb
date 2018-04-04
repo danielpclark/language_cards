@@ -3,7 +3,7 @@ module LanguageCards
   module Modes
     class Game
       def initialize card_set
-        @card_set = card_set
+        @card_set = card_set.graphemes
         @index = 0
         @current = nil
       end

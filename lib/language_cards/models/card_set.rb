@@ -10,10 +10,6 @@ module LanguageCards
       @graphemes = GraphemeBuilder.(grapheme_hash)
     end
 
-    def sample
-      @graphemes.sample
-    end
-
     def mode(mode)
       case mode
       when :translate
