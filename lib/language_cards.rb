@@ -3,7 +3,6 @@ require 'language_cards/defaults'
 require 'language_cards/yaml_loader'
 require 'language_cards/user_interface'
 require 'language_cards/menu_builder'
-require 'yaml'
 
 ##
 # TODO:
