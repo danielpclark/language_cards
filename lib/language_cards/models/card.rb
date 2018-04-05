@@ -1,18 +1,18 @@
 
 module LanguageCards
-  class Grapheme
+  class Card
     attr_reader :translation
-    def initialize grapheme, translation
-      @grapheme = grapheme
+    def initialize card, translation
+      @card = card
       @translation = Array(translation)
     end
 
     def display
-      @grapheme
+      @card
     end
 
     def to_s
-      @grapheme
+      @card
     end
   end
 end

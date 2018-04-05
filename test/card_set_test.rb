@@ -10,8 +10,8 @@ class CardSetTest < Minitest::Test
 
   def test_creates_collection
     assert card_set.respond_to? :mode
-    assert card_set.respond_to? :graphemes
-    assert card_set.graphemes.first.respond_to? :translation
+    assert card_set.respond_to? :cards
+    assert card_set.cards.first.respond_to? :translation
   end
 
   def test_modes

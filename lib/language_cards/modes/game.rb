@@ -3,13 +3,13 @@ module LanguageCards
   module Modes
     class Game
       def initialize card_set
-        @card_set = card_set.graphemes
+        @card_set = card_set.cards
         @index = 0
         @current = nil
       end
 
       def current
-        @current or raise "Current grapheme not yet set!"
+        @current or raise "Current flash card not yet set!"
       end
 
       # @return Grapheme Returns a random grapheme

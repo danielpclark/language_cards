@@ -1,13 +1,14 @@
-require 'language_cards/models/grapheme'
-require 'language_cards/grapheme_builder'
+require 'language_cards/models/card'
+require 'language_cards/card_set_builder'
 require 'language_cards/modes/typing_practice'
 require 'language_cards/modes/translate'
 
 module LanguageCards
   class CardSet
-    attr_reader :graphemes
-    def initialize(grapheme_hash)
-      @graphemes = GraphemeBuilder.(grapheme_hash)
+    include CardSetBuilder
+    attr_reader :cards
+    def initialize(card_hash)
+      @cards = card_set_builder(card_hash)
     end
 
     def mode(mode)
