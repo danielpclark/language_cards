@@ -11,7 +11,7 @@ module LanguageCards
       @cards = card_set_builder(card_hash)
     end
 
-    def mode(mode)
+    def game(mode)
       case mode
       when :translate
         Modes::Translate.new(self)

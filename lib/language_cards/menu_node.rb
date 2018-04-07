@@ -17,8 +17,8 @@ module LanguageCards
     end
 
     # @return <Mode<CardSet> < Game>
-    def mode(game_mode)
-      child.mode(game_mode)
+    def game(mode)
+      child.game(mode)
     end
 
     # This is the preferred method for the view as this object shouldn't

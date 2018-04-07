@@ -37,7 +37,7 @@ module LanguageCards
 
             collection = menu_items[value] # MenuNode
             title = "#{collection.title} (#{humanize mode.peek})"
-            collection = collection.mode(mode.peek) # Mode<CardSet> < Game
+            collection = collection.game(mode.peek) # Mode<CardSet> < Game
 
             game = Game.new(opts)
             timer = Timer.new
