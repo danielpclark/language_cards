@@ -12,14 +12,9 @@ module LanguageCards
     end
 
     def game(mode)
-      case mode
-      when :translate
-        Modes::Translate.new(self)
-      when :typing_practice
-        Modes::TypingPractice.new(self) 
-      else
-        raise "Invalid Game Mode!"
-      end
+      Modes.public_send mode, self
+    rescue NoMethodError
+      raise InvalidGameMode, "Invalid Game Mode!"
     end
 
     # So as to not interfere with menu naming as this is not meant to
@@ -31,5 +26,8 @@ module LanguageCards
     def label
       []
     end
+
+    private
+    class InvalidGameMode < StandardError; end
   end
 end
