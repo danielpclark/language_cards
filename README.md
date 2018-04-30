@@ -15,19 +15,11 @@ Internationalization support is built in!  Translators are welcome to make this 
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'language_cards'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install language_cards
+    
+Or try out the latest master by downloading it: [[master.zip](https://github.com/danielpclark/language_cards/archive/master.zip)]
 
 ## Usage
 
