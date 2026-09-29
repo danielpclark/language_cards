@@ -14,7 +14,27 @@ Japanese is covered from the kana all the way through JLPT N1: every hiragana an
 combinations, extended katakana and IME keyboard mappings), all 2,211 JLPT N5–N1 kanji and more than 7,800
 JLPT N5–N1 vocabulary words.
 
-<!-- LANGUAGES -->
+Included languages (17 languages, 103 card sets, ~17,900 cards):
+
+| Language | Card sets (cards) |
+| --- | --- |
+| Arabic | Alphabet (31), Numbers (23), Numerals (10), Common Words (245), Phrases (48) |
+| Armenian | Alphabet (77), Numbers (23), Common Words (249), Phrases (46) |
+| Bengali | Vowels (11), Consonants (39), Numbers (23), Numerals (10), Common Words (249), Phrases (48) |
+| Chinese | HSK 1 (150), HSK 2 (147), HSK 3 (298), HSK 4 (598) |
+| Georgian | Alphabet (33), Numbers (23), Common Words (250), Phrases (45) |
+| Greek | Alphabet (49), Numbers (23), Common Words (247), Phrases (49) |
+| Hebrew | Alphabet (22), Final Forms (5), Numbers (23), Common Words (243), Phrases (49) |
+| Hindi | Vowels (13), Consonants (44), Vowel Signs (11), Numbers (23), Numerals (10), Common Words (245), Phrases (49) |
+| Japanese | Hiragana (46), Hiragana Diacritics (25), Hiragana Combinations (36), Hiragana (All) (108), Katakana (46), Katakana Diacritics (25), Katakana Combinations (36), Katakana Extended (34), Katakana (All) (141), Hiragana Keyboard Mappings (173), Katakana Keyboard Mappings (176), Kanji (JLPT N5) (79), Kanji (JLPT N4) (166), Kanji (JLPT N3) (367), Kanji (JLPT N2) (367), Kanji (JLPT N1) (1232), Vocabulary (JLPT N5) (702), Vocabulary (JLPT N4) (662), Vocabulary (JLPT N3) (2102), Vocabulary (JLPT N2) (1732), Vocabulary (JLPT N1) (2683) |
+| Korean | Hangul Consonants (19), Hangul Vowels (21), Hangul Syllables (140), Numbers (45), Common Words (244), Phrases (50) |
+| Persian | Alphabet (32), Numbers (23), Numerals (10), Common Words (246), Phrases (46) |
+| Punjabi | Letters (41), Vowels (10), Numbers (23), Numerals (10), Common Words (246), Phrases (48) |
+| Russian | Alphabet (66), Numbers (23), Common Words (250), Phrases (48) |
+| Tamil | Vowels (13), Consonants (23), Syllables (23), Numbers (23), Numerals (10), Common Words (249), Phrases (47) |
+| Thai | Consonants (44), Vowels (30), Numbers (23), Numerals (10), Common Words (243), Phrases (43) |
+| Ukrainian | Alphabet (66), Numbers (23), Common Words (250), Phrases (48) |
+| Urdu | Alphabet (39), Numbers (23), Numerals (10), Common Words (248), Phrases (41) |
 
 Internationalization support is built in!  Translators are welcome to make this game available in other languages.
 
