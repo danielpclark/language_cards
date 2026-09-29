@@ -5,14 +5,15 @@ module LanguageCards
         '~' * SUBMENUWIDTH
       end
 
-      def t str
-        I18n.t str
+      def t str, **options
+        I18n.t str, **options
       end
 
       def draw left=nil, center=nil, right=nil
         width = SUBMENUWIDTH
         str = left.to_s
         str = str + center.to_s.rjust(width/2 - str.length + center.to_s.length/2)
+        str = str.rstrip + ' ' if str.length + right.to_s.length > width && !str.strip.empty?
         str + right.to_s.rjust(width - str.length)
       end
 

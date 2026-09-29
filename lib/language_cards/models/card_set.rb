@@ -17,6 +17,10 @@ module LanguageCards
       raise InvalidGameMode, "Invalid Game Mode!"
     end
 
+    def size
+      cards.length
+    end
+
     # So as to not interfere with menu naming as this is not meant to
     # be displayed as a string.
     def to_s

@@ -2,6 +2,16 @@ en:
   Menu:
     Title: Language Cards by @6ftdan
     Choose: Select an option
+    ChooseLanguage: Select a language
+    ChooseCardSet: Select a card set
+    Set: set
+    Sets: sets
+    Cards: cards
+    Page: "Page %{page} of %{pages}"
+    NextPage: Next page
+    PreviousPage: Previous page
+    Back: Back
+    Quit: Quit
     GameMode: "GAME MODE: "
     ToggleGameMode: Change Mode
     ModeTranslate: Translate
@@ -9,6 +19,7 @@ en:
     Exit: Press CTRL-C to quit.
   Game:
     TypeThis: Type the following in
+    Exit: Press CTRL-C for the menu.
     Correct: Correct!
     Incorrect: Wrong!
     Its: it's

@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Daniel P. Clark']
   spec.email         = ['6ftdan@gmail.com']
 
-  spec.summary       = %q{Flashcard game for language learning.}
-  spec.description   = %q{Flashcard game for language learning. Make your own cards or translations as well.}
+  spec.summary       = %q{Terminal flashcard game for learning languages with foreign scripts.}
+  spec.description   = %q{Flashcard game for language learning: Japanese (kana, JLPT N5-N1 kanji and vocabulary), Chinese (HSK 1-4), Korean, Russian, Arabic, Hindi and many more. Make your own cards or translations as well.}
   spec.homepage      = 'http://github.com/danielpclark/language_cards'
   spec.license       = 'MIT'
 
@@ -21,10 +21,12 @@ Gem::Specification.new do |spec|
   spec.executables   = ['language_cards']
   spec.require_paths = ['lib','cards']
 
-  spec.add_dependency 'highline', '~> 1.7'
-  spec.add_dependency 'i18n', '~> 0.7'
+  spec.required_ruby_version = '>= 2.5'
+
+  spec.add_dependency 'highline', '>= 2.0', '< 4'
+  spec.add_dependency 'i18n', '>= 1.0', '< 2'
   spec.add_dependency 'slop', '~> 4.6'
-  spec.add_development_dependency 'bundler', '~> 1.13'
-  spec.add_development_dependency 'rake', '~> 12.3'
+  spec.add_development_dependency 'bundler', '>= 1.13'
+  spec.add_development_dependency 'rake', '>= 12.3'
   spec.add_development_dependency 'minitest', '~> 5.10'
 end

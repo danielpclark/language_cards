@@ -5,5 +5,7 @@
 <% (_courses.empty? ? errors : _courses).each do |course| %>
   <%= course.chomp %><% end %>
 
-<%= draw(_mexit, nil, _toggle) %>
+<% if _page %><%= draw(_page.first, nil, _page.last) %>
+<% end %><%= draw(_back, nil, _toggle) %>
+<%= draw(_mexit, nil, _quit) %>
 <%= divider %>
