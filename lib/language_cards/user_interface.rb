@@ -1,4 +1,5 @@
 require 'language_cards/timer'
+require 'language_cards/paginator'
 require 'language_cards/helpers/view_helper'
 require 'language_cards/helpers/game_helper'
 require 'language_cards/controllers/main_menu'
@@ -10,7 +11,7 @@ module LanguageCards
     include Controllers
     def initialize menu_items
       @menu_items = menu_items
-      @courses = process_courses(menu_items)
+      @languages = group_by_language(menu_items)
       @mode = [:translate, :typing_practice].cycle
     end
 
@@ -21,70 +22,102 @@ module LanguageCards
         sleep 2
       end
 
-      begin
-        loop do
-          clear
-
-          CLI.say MainMenu.new(opts).render courses: courses, mode: mode
-
-          value = CLI.ask("")
-
-          next mode.next if value =~ /\Am\z/i
-          value = value.to_i - 1 rescue next
-
-          last = nil
-          if (0..courses.length-1).include? value
-
-            collection = menu_items[value] # MenuNode
-            title = "#{collection.title} (#{humanize mode.peek})"
-            collection = collection.game(mode.peek) # Mode<CardSet> < Game
-
-            game = Game.new(opts)
-            timer = Timer.new
-            begin # Game Loop
-              loop do
-                clear
-                timer.mark
-                CLI.say game.render correct: correct,
-                                    incorrect: incorrect,
-                                    title: title,
-                                    timer: timer,
-                                    last: last
-                result = game.process(collection)
-                result[:correct] ? correct! : incorrect!
-                last = result[:last]
-              end
-            rescue SystemExit, Interrupt
-            end
-          end
-        end
-
-      rescue SystemExit, Interrupt
+      catch(:quit) do
+        languages.length == 1 ? card_set_menu(languages.keys.first, false) : language_menu
       end
+    rescue SystemExit, Interrupt, EOFError
     end
 
     private
-    attr_reader :mode, :menu_items, :correct, :incorrect, :courses
+    attr_reader :mode, :menu_items, :languages
     def opts
       @opts ||= {}
     end
 
-    def correct!
-      @correct = @correct.to_i + 1
+    # First screen: pick a language.
+    def language_menu
+      menu_loop(
+        Paginator.new(languages.keys),
+        heading: t('Menu.ChooseLanguage'),
+        label: ->(language) {
+          sets = languages[language].length
+          "#{language} (#{sets} #{t(sets == 1 ? 'Menu.Set' : 'Menu.Sets')})"
+        }
+      ) {|language| card_set_menu(language) }
     end
 
-    def incorrect!
-      @incorrect = @incorrect.to_i + 1
+    # Second screen: pick a card set for the chosen language.
+    def card_set_menu(language, back = true)
+      menu_loop(
+        Paginator.new(languages[language]),
+        heading: "#{language}#{JOIN}#{t('Menu.ChooseCardSet')}",
+        back: back,
+        label: ->(course) { "#{course.title(JOIN, 1..-1)} (#{course.size} #{t('Menu.Cards')})" }
+      ) {|course| play(course) }
     end
 
-    def process_courses(menu_items)
-      courses = menu_items.flat_map {|i| i.label.join(JOIN) }
+    # Renders a paginated menu until the user goes back.  Selected items
+    # are yielded to the block.
+    def menu_loop(pages, heading:, label:, back: false)
+      loop do
+        clear
+        CLI.say MainMenu.new(opts).render courses: pages.current.map {|_, item| label.(item) },
+                                          offset: pages.offset,
+                                          mode: mode,
+                                          heading: heading,
+                                          pages: pages,
+                                          back: back
 
-      if courses.empty?
+        value = CLI.ask("").to_s.strip
+
+        case value
+        when /\Am\z/i then mode.next
+        when /\An\z/i, '>' then pages.next_page
+        when /\Ap\z/i, '<' then pages.previous_page
+        when /\Ab\z/i then return if back
+        when /\Aq\z/i then throw :quit
+        else
+          item = pages[value]
+          yield item if item
+        end
+      end
+    end
+
+    def play(course)
+      title = "#{course.title} (#{humanize mode.peek})"
+      collection = course.game(mode.peek) # Mode<CardSet> < Game
+      game = Game.new(opts)
+      timer = Timer.new
+      correct = incorrect = last = nil
+
+      loop do # Game Loop
+        clear
+        timer.mark
+        CLI.say game.render correct: correct,
+                            incorrect: incorrect,
+                            title: title,
+                            timer: timer,
+                            last: last
+        result = game.process(collection)
+        if result[:correct]
+          correct = correct.to_i + 1
+        else
+          incorrect = incorrect.to_i + 1
+        end
+        last = result[:last]
+      end
+    rescue Interrupt # CTRL-C returns to the menu
+    end
+
+    # @return Hash{String => Array<MenuNode>} languages sorted by name
+    def group_by_language(menu_items)
+      if menu_items.empty?
         opts[:errors] = ["No Flash Cards found for language: #{CARD_LANGUAGE}"]
       end
 
-      courses
+      menu_items.group_by {|item| item.label.first }
+                .sort_by {|language, _| language.downcase }
+                .to_h
     end
   end
 end

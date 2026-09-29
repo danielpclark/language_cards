@@ -1,0 +1,534 @@
+---
+# Korean: Hangul Consonants (19), Hangul Vowels (21), Hangul Syllables (140), Numbers (45), Common Words (244), Phrases (50)
+Korean:
+  Hangul Consonants:
+    mapping: { Hangul: [Latin, Name] }
+    ㄱ: [g, k, giyeok]
+    ㄴ: ['n', nieun]
+    ㄷ: [d, t, digeut]
+    ㄹ: [r, l, rieul]
+    ㅁ: [m, mieum]
+    ㅂ: [b, p, bieup]
+    ㅅ: [s, t, siot]
+    ㅇ: [ng, ieung, silent]
+    ㅈ: [j, t, jieut]
+    ㅊ: [ch, t, chieut]
+    ㅋ: [k, kieuk]
+    ㅌ: [t, tieut]
+    ㅍ: [p, pieup]
+    ㅎ: [h, t, hieut]
+    ㄲ: [kk, k, ssanggiyeok]
+    ㄸ: [tt, ssangdigeut]
+    ㅃ: [pp, ssangbieup]
+    ㅆ: [ss, t, ssangsiot]
+    ㅉ: [jj, ssangjieut]
+  Hangul Vowels:
+    mapping: { Hangul: Latin }
+    ㅏ: a
+    ㅐ: ae
+    ㅑ: ya
+    ㅒ: yae
+    ㅓ: eo
+    ㅔ: e
+    ㅕ: yeo
+    ㅖ: ye
+    ㅗ: o
+    ㅘ: wa
+    ㅙ: wae
+    ㅚ: oe
+    ㅛ: yo
+    ㅜ: u
+    ㅝ: wo
+    ㅞ: we
+    ㅟ: wi
+    ㅠ: yu
+    ㅡ: eu
+    ㅢ: ui
+    ㅣ: i
+  Hangul Syllables:
+    mapping: { Hangul: Latin }
+    가: ga
+    갸: gya
+    거: geo
+    겨: gyeo
+    고: go
+    교: gyo
+    구: gu
+    규: gyu
+    그: geu
+    기: gi
+    나: na
+    냐: nya
+    너: neo
+    녀: nyeo
+    노: 'no'
+    뇨: nyo
+    누: nu
+    뉴: nyu
+    느: neu
+    니: ni
+    다: da
+    댜: dya
+    더: deo
+    뎌: dyeo
+    도: do
+    됴: dyo
+    두: du
+    듀: dyu
+    드: deu
+    디: di
+    라: ra
+    랴: rya
+    러: reo
+    려: ryeo
+    로: ro
+    료: ryo
+    루: ru
+    류: ryu
+    르: reu
+    리: ri
+    마: ma
+    먀: mya
+    머: meo
+    며: myeo
+    모: mo
+    묘: myo
+    무: mu
+    뮤: myu
+    므: meu
+    미: mi
+    바: ba
+    뱌: bya
+    버: beo
+    벼: byeo
+    보: bo
+    뵤: byo
+    부: bu
+    뷰: byu
+    브: beu
+    비: bi
+    사: sa
+    샤: sya
+    서: seo
+    셔: syeo
+    소: so
+    쇼: syo
+    수: su
+    슈: syu
+    스: seu
+    시: [si, shi]
+    아: a
+    야: ya
+    어: eo
+    여: yeo
+    오: o
+    요: yo
+    우: u
+    유: yu
+    으: eu
+    이: i
+    자: ja
+    쟈: jya
+    저: jeo
+    져: jyeo
+    조: jo
+    죠: jyo
+    주: ju
+    쥬: jyu
+    즈: jeu
+    지: ji
+    차: cha
+    챠: chya
+    처: cheo
+    쳐: chyeo
+    초: cho
+    쵸: chyo
+    추: chu
+    츄: chyu
+    츠: cheu
+    치: chi
+    카: ka
+    캬: kya
+    커: keo
+    켜: kyeo
+    코: ko
+    쿄: kyo
+    쿠: ku
+    큐: kyu
+    크: keu
+    키: ki
+    타: ta
+    탸: tya
+    터: teo
+    텨: tyeo
+    토: to
+    툐: tyo
+    투: tu
+    튜: tyu
+    트: teu
+    티: ti
+    파: pa
+    퍄: pya
+    퍼: peo
+    펴: pyeo
+    포: po
+    표: pyo
+    푸: pu
+    퓨: pyu
+    프: peu
+    피: pi
+    하: ha
+    햐: hya
+    허: heo
+    혀: hyeo
+    호: ho
+    효: hyo
+    후: hu
+    휴: hyu
+    흐: heu
+    히: hi
+  Numbers:
+    mapping: { Korean: [Latin, English] }
+    영: [yeong, zero, '0']
+    공: [gong, zero, '0']
+    일: [il, one, '1']
+    이: [i, two, '2']
+    삼: [sam, three, '3']
+    사: [sa, four, '4']
+    오: [o, five, '5']
+    육: [yuk, six, '6']
+    칠: [chil, seven, '7']
+    팔: [pal, eight, '8']
+    구: [gu, nine, '9']
+    십: [sip, ten, '10']
+    십일: [sibil, eleven, '11']
+    십이: [sibi, twelve, '12']
+    이십: [isip, twenty, '20']
+    삼십: [samsip, thirty, '30']
+    사십: [sasip, forty, '40']
+    오십: [osip, fifty, '50']
+    육십: [yuksip, sixty, '60']
+    칠십: [chilsip, seventy, '70']
+    팔십: [palsip, eighty, '80']
+    구십: [gusip, ninety, '90']
+    백: [baek, hundred, one hundred, '100']
+    천: [cheon, thousand, one thousand, '1000']
+    만: [man, ten thousand, '10000']
+    하나: [hana, one, '1']
+    둘: [dul, two, '2']
+    셋: [set, three, '3']
+    넷: [net, four, '4']
+    다섯: [daseot, five, '5']
+    여섯: [yeoseot, six, '6']
+    일곱: [ilgop, seven, '7']
+    여덟: [yeodeol, eight, '8']
+    아홉: [ahop, nine, '9']
+    열: [yeol, ten, '10']
+    열하나: [yeolhana, eleven, '11']
+    열둘: [yeoldul, twelve, '12']
+    스물: [seumul, twenty, '20']
+    서른: [seoreun, thirty, '30']
+    마흔: [maheun, forty, '40']
+    쉰: [swin, fifty, '50']
+    예순: [yesun, sixty, '60']
+    일흔: [ilheun, seventy, '70']
+    여든: [yeodeun, eighty, '80']
+    아흔: [aheun, ninety, '90']
+  Common Words:
+    mapping: { Korean: [Latin, English] }
+    나: [na, I, me]
+    저: [jeo, I, me]
+    너: [neo, you]
+    우리: [uri, we, us, our]
+    그: [geu, he, that]
+    이것: [igeot, this, this thing]
+    그것: [geugeot, that, it]
+    여기: [yeogi, here]
+    누구: [nugu, who]
+    무엇: [mueot, what]
+    뭐: [mwo, what]
+    어디: [eodi, where]
+    언제: [eonje, when]
+    왜: [wae, why]
+    어떻게: [eotteoke, how]
+    얼마: [eolma, how much]
+    몇: [myeot, how many, what number]
+    어느: [eoneu, which]
+    가족: [gajok, family]
+    아버지: [abeoji, father]
+    어머니: [eomeoni, mother]
+    형: [hyeong, older brother]
+    오빠: [oppa, older brother]
+    누나: [nuna, older sister]
+    언니: [eonni, older sister]
+    동생: [dongsaeng, younger sibling]
+    할아버지: [harabeoji, grandfather]
+    할머니: [halmeoni, grandmother]
+    아들: [adeul, son]
+    딸: [ttal, daughter]
+    남편: [nampyeon, husband]
+    아내: [anae, wife]
+    아이: [ai, child, kid]
+    사람: [saram, person, people]
+    남자: [namja, man, male]
+    여자: [yeoja, woman, female]
+    친구: [chingu, friend]
+    선생님: [seonsaengnim, teacher]
+    학생: [haksaeng, student]
+    이름: [ireum, name]
+    머리: [meori, head, hair]
+    얼굴: [eolgul, face]
+    눈: [nun, eye, snow]
+    코: [ko, nose]
+    입: [ip, mouth]
+    손: [son, hand]
+    발: [bal, foot]
+    다리: [dari, leg, bridge]
+    배: [bae, stomach, pear, boat]
+    음식: [eumsik, food]
+    밥: [bap, rice, meal]
+    물: [mul, water]
+    빵: [ppang, bread]
+    고기: [gogi, meat]
+    생선: [saengseon, fish]
+    과일: [gwail, fruit]
+    사과: [sagwa, apple, apology]
+    우유: [uyu, milk]
+    커피: [keopi, coffee]
+    차: [cha, tea, car]
+    김치: [gimchi, kimchi]
+    계란: [gyeran, egg]
+    아침: [achim, morning, breakfast]
+    점심: [jeomsim, lunch, noon]
+    저녁: [jeonyeok, evening, dinner]
+    개: [gae, dog]
+    고양이: [goyangi, cat]
+    빨간색: [ppalgansaek, red]
+    파란색: [paransaek, blue]
+    노란색: [noransaek, yellow]
+    초록색: [choroksaek, green]
+    흰색: [huinsaek, white]
+    검은색: [geomeunsaek, black]
+    시간: [sigan, time, hour]
+    오늘: [oneul, today]
+    내일: [naeil, tomorrow]
+    어제: [eoje, yesterday]
+    지금: [jigeum, now]
+    매일: [maeil, every day, daily]
+    주말: [jumal, weekend]
+    달: [dal, month, moon]
+    해: [hae, year, sun]
+    월요일: [woryoil, Monday]
+    화요일: [hwayoil, Tuesday]
+    수요일: [suyoil, Wednesday]
+    목요일: [mogyoil, Thursday]
+    금요일: [geumyoil, Friday]
+    토요일: [toyoil, Saturday]
+    일요일: [iryoil, Sunday]
+    밤: [bam, night, chestnut]
+    오전: [ojeon, morning, am]
+    오후: [ohu, afternoon, pm]
+    봄: [bom, spring]
+    여름: [yeoreum, summer]
+    가을: [gaeul, autumn, fall]
+    겨울: [gyeoul, winter]
+    날씨: [nalssi, weather]
+    생일: [saengil, birthday]
+    집: [jip, house, home]
+    학교: [hakgyo, school]
+    회사: [hoesa, company, office]
+    병원: [byeongwon, hospital]
+    은행: [eunhaeng, bank]
+    식당: [sikdang, restaurant]
+    가게: [gage, store, shop]
+    시장: [sijang, market]
+    화장실: [hwajangsil, bathroom, toilet, restroom]
+    역: [yeok, station]
+    공항: [gonghang, airport]
+    도서관: [doseogwan, library]
+    편의점: [pyeonuijeom, convenience store]
+    공원: [gongwon, park]
+    방: [bang, room]
+    나라: [nara, country]
+    한국: [hanguk, Korea, South Korea]
+    길: [gil, road, street, way]
+    바다: [bada, sea, ocean]
+    산: [san, mountain]
+    비: [bi, rain]
+    꽃: [kkot, flower]
+    책: [chaek, book]
+    책상: [chaeksang, desk]
+    의자: [uija, chair]
+    문: [mun, door]
+    컴퓨터: [keompyuteo, computer]
+    전화: [jeonhwa, telephone, phone call]
+    휴대폰: [hyudaepon, cell phone, mobile phone]
+    옷: [ot, clothes]
+    신발: [sinbal, shoes]
+    가방: [gabang, bag]
+    돈: [don, money]
+    시계: [sigye, clock, watch]
+    우산: [usan, umbrella]
+    사진: [sajin, photo, picture]
+    선물: [seonmul, gift, present]
+    버스: [beoseu, bus]
+    지하철: [jihacheol, subway]
+    비행기: [bihaenggi, airplane, plane]
+    기차: [gicha, train]
+    택시: [taeksi, taxi]
+    한국어: [hangugeo, Korean, Korean language]
+    영어: [yeongeo, English]
+    일: [il, work, job, task]
+    숙제: [sukje, homework]
+    영화: [yeonghwa, movie, film]
+    음악: [eumak, music]
+    노래: [norae, song]
+    운동: [undong, exercise, sports, workout]
+    여행: [yeohaeng, travel, trip]
+    취미: [chwimi, hobby]
+    가다: [gada, go]
+    오다: [oda, come]
+    먹다: [meokda, eat]
+    마시다: [masida, drink]
+    자다: [jada, sleep]
+    일어나다: [ireonada, get up, wake up]
+    보다: [boda, see, look, watch]
+    듣다: [deutda, listen, hear]
+    말하다: [malhada, speak, say, talk]
+    읽다: [ikda, read]
+    쓰다: [sseuda, write, use]
+    하다: [hada, do]
+    있다: [itda, be, exist, have]
+    없다: [eopda, not exist, not have]
+    주다: [juda, give]
+    받다: [batda, receive, get]
+    사다: [sada, buy]
+    팔다: [palda, sell]
+    만들다: [mandeulda, make]
+    배우다: [baeuda, learn]
+    가르치다: [gareuchida, teach]
+    알다: [alda, know]
+    모르다: [moreuda, not know]
+    좋아하다: [joahada, like]
+    싫어하다: [sireohada, dislike, hate]
+    사랑하다: [saranghada, love]
+    만나다: [mannada, meet]
+    기다리다: [gidarida, wait]
+    앉다: [anda, sit]
+    걷다: [geotda, walk]
+    놀다: [nolda, play, hang out]
+    일하다: [ilhada, work]
+    공부하다: [gongbuhada, study]
+    쉬다: [swida, rest]
+    살다: [salda, live]
+    열다: [yeolda, open]
+    닫다: [datda, close, shut]
+    입다: [ipda, wear, put on]
+    타다: [tada, ride, take, get on]
+    찾다: [chatda, find, look for]
+    보내다: [bonaeda, send]
+    생각하다: [saenggakada, saenggakhada, think]
+    시작하다: [sijakada, sijakhada, start, begin]
+    끝나다: [kkeunnada, end, finish]
+    도와주다: [dowajuda, help]
+    좋다: [jota, good, nice]
+    나쁘다: [nappeuda, bad]
+    크다: [keuda, big, large, tall]
+    작다: [jakda, small, little]
+    많다: [manta, many, much, a lot]
+    길다: [gilda, long]
+    짧다: [jjalda, short]
+    덥다: [deopda, hot]
+    춥다: [chupda, cold]
+    예쁘다: [yeppeuda, pretty, beautiful]
+    맛있다: [masitda, delicious, tasty]
+    재미있다: [jaemiitda, fun, interesting]
+    쉽다: [swipda, easy]
+    어렵다: [eoryeopda, difficult, hard]
+    비싸다: [bissada, expensive]
+    싸다: [ssada, cheap]
+    바쁘다: [bappeuda, busy]
+    아프다: [apeuda, sick, hurt, painful]
+    피곤하다: [pigonhada, tired]
+    배고프다: [baegopeuda, hungry]
+    슬프다: [seulpeuda, sad]
+    빠르다: [ppareuda, fast, quick]
+    가깝다: [gakkapda, near, close]
+    멀다: [meolda, far]
+    괜찮다: [gwaenchanta, okay, fine, all right]
+    같다: [gatda, same, alike]
+    다르다: [dareuda, different]
+    맵다: [maepda, spicy, hot]
+    아주: [aju, very]
+    너무: [neomu, too, too much, very]
+    정말: [jeongmal, really, truly]
+    많이: [mani, a lot, much]
+    조금: [jogeum, a little, a bit]
+    빨리: [ppalli, quickly, fast]
+    천천히: [cheoncheonhi, slowly]
+    같이: [gachi, together]
+    다시: [dasi, again]
+    잘: [jal, well]
+    항상: [hangsang, always]
+    자주: [jaju, often]
+    오른쪽: [oreunjjok, right, right side]
+    왼쪽: [oenjjok, left, left side]
+    앞: [ap, front]
+    뒤: [dwi, back, behind]
+    위: [wi, top, above, 'on']
+    아래: [arae, bottom, below, under]
+    안: [an, inside, in]
+    밖: [bak, outside, out]
+    옆: [yeop, side, next to, beside]
+  Phrases:
+    mapping: { Korean: [Latin, English] }
+    안녕하세요: [annyeonghaseyo, hello, hi, good morning]
+    안녕하십니까: [annyeonghasimnikka, hello, good day]
+    안녕히 가세요: [annyeonghi gaseyo, goodbye, bye]
+    안녕히 계세요: [annyeonghi gyeseyo, goodbye, bye]
+    안녕히 주무세요: [annyeonghi jumuseyo, good night, sleep well]
+    감사합니다: [gamsahamnida, thank you, thanks]
+    고맙습니다: [gomapseumnida, thank you, thanks]
+    천만에요: [cheonmaneyo, you're welcome, don't mention it]
+    죄송합니다: [joesonghamnida, I'm sorry, sorry, excuse me]
+    미안해요: [mianhaeyo, sorry, I'm sorry]
+    괜찮아요: [gwaenchanayo, it's okay, I'm fine, no problem]
+    네: [ne, 'yes']
+    아니요: [aniyo, 'no']
+    만나서 반갑습니다: [mannaseo bangapseumnida, nice to meet you, pleased to meet you]
+    처음 뵙겠습니다: [cheoeum boepgetseumnida, how do you do, nice to meet you]
+    '어떻게 지내세요?': [eotteoke jinaeseyo, how are you, how are you doing]
+    저는 잘 지내요: [jeoneun jal jinaeyo, I'm fine, I'm doing well]
+    '이름이 뭐예요?': [ireumi mwoyeyo, what's your name, what is your name]
+    제 이름은 민수입니다: [je ireumeun minsuimnida, my name is Minsu, I am Minsu]
+    '어디에서 왔어요?': [eodieseo wasseoyo, where are you from]
+    저는 미국 사람이에요: [jeoneun miguk saramieyo, I'm American, I am American]
+    한국어를 조금 해요: [hangugeoreul jogeum haeyo, I speak a little Korean]
+    '영어를 할 수 있어요?': [yeongeoreul hal su isseoyo, can you speak English, do you speak English]
+    이해가 안 돼요: [ihaega an dwaeyo, I don't understand]
+    몰라요: [mollayo, I don't know]
+    잘 모르겠어요: [jal moreugesseoyo, I'm not sure, I don't really know]
+    알겠습니다: [algetseumnida, I understand, got it, okay]
+    다시 한 번 말해 주세요: [dasi han beon malhae juseyo, please say it again, say that again please]
+    천천히 말해 주세요: [cheoncheonhi malhae juseyo, please speak slowly]
+    '화장실이 어디예요?': [hwajangsiri eodiyeyo, where is the bathroom, where is the restroom]
+    '역이 어디에 있어요?': [yeogi eodie isseoyo, where is the station]
+    '이거 얼마예요?': [igeo eolmayeyo, how much is this]
+    이거 주세요: [igeo juseyo, this please, I'll take this]
+    물 좀 주세요: [mul jom juseyo, water please, some water please]
+    계산서 주세요: [gyesanseo juseyo, the check please, the bill please]
+    실례합니다: [sillyehamnida, excuse me]
+    잠깐만요: [jamkkanmanyo, jamkkanmannyo, just a moment, wait a moment]
+    도와주세요: [dowajuseyo, help me, please help]
+    어서 오세요: [eoseo oseyo, welcome]
+    잘 먹겠습니다: [jal meokgetseumnida, thanks for the meal, let's eat]
+    잘 먹었습니다: [jal meogeotseumnida, thank you for the meal, I enjoyed the meal]
+    맛있어요: [masisseoyo, it's delicious, delicious]
+    '몇 시예요?': [myeot siyeyo, what time is it]
+    좋아요: [joayo, good, okay, I like it]
+    사랑해요: [saranghaeyo, I love you]
+    축하해요: [chukahaeyo, chukhahaeyo, congratulations]
+    생일 축하합니다: [saengil chukahamnida, happy birthday]
+    새해 복 많이 받으세요: [saehae bok mani badeuseyo, happy new year]
+    수고하셨습니다: [sugohasyeotseumnida, thank you for your hard work, good job]
+    또 만나요: [tto mannayo, see you again, see you later]

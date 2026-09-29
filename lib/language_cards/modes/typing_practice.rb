@@ -7,7 +7,7 @@ module LanguageCards
 
     class TypingPractice < Game
       def match? input
-        "#{current}" == input
+        normalize(current) == normalize(input)
       end
 
       def mode

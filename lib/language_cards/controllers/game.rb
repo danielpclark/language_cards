@@ -8,7 +8,7 @@ module LanguageCards
       def render(correct:, incorrect:, title:, timer:, last:)
         _score = t('Game.ScoreMenu.Score') + ": %0.2d%%" % calc_score(correct, incorrect)
         _timer = [((t('Timer.Timer') + ": " + timer.ha) if timer.time?), nil, timer.h]
-        _mexit = t 'Menu.Exit'
+        _mexit = t 'Game.Exit'
 
         super(binding)
       end

@@ -12,9 +12,11 @@ module LanguageCards
         @current or raise "Current flash card not yet set!"
       end
 
-      # @return Grapheme Returns a random grapheme
+      # Picks a random card, avoiding the same card twice in a row.
+      # @return self
       def sample
-        @current = @card_set.sample
+        choices = @card_set.length > 1 ? @card_set - [@current] : @card_set
+        @current = choices.sample
         self
       end
 
@@ -24,6 +26,15 @@ module LanguageCards
         value = @card_set[@index % @card_set.length]
         @index += 1
         @current = value
+      end
+
+      private
+      # Makes comparisons forgiving of surrounding/repeated whitespace and of
+      # differing Unicode compositions (e.g. pinyin tone marks).
+      def normalize(text)
+        text = text.to_s
+        text = text.unicode_normalize(:nfc) rescue text
+        text.strip.squeeze(' ')
       end
     end
   end

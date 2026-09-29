@@ -21,6 +21,11 @@ module LanguageCards
       child.game(mode)
     end
 
+    # @return Integer number of cards in the card set
+    def size
+      child.size
+    end
+
     # This is the preferred method for the view as this object shouldn't
     # care about how it should be displayed in the view.
     # @return Array<String>

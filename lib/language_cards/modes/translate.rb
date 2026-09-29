@@ -7,11 +7,18 @@ module LanguageCards
 
     class Translate < Game
       def match? input
-        current.translation.any? {|value| value == input }
+        answer = comparable(input)
+        current.translation.any? {|value| comparable(value) == answer }
       end
 
       def mode
         :translate
+      end
+
+      private
+      # Case-insensitive, and a leading "to " is optional ("to eat" == "eat").
+      def comparable(text)
+        normalize(text).downcase.sub(/\Ato (?=\S)/, '')
       end
     end
   end

@@ -3,8 +3,8 @@ module LanguageCards
   class Card
     attr_reader :translation
     def initialize card, translation
-      @card = card
-      @translation = Array(translation)
+      @card = card.to_s
+      @translation = Array(translation).map(&:to_s)
     end
 
     def display

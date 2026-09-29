@@ -1,3 +1,5 @@
+require 'yaml'
+
 module LanguageCards
   class YAMLLoader
     def initialize
@@ -8,7 +10,7 @@ module LanguageCards
       cards = {}
 
       cards_yaml.each do |c|
-        next unless yaml_data = YAML.load(File.open(c).read)
+        next unless yaml_data = YAML.safe_load(File.read(c, encoding: 'UTF-8'))
         for language in yaml_data.keys do
           # Merges sub-items for languages
           if cards.has_key? language
@@ -35,12 +37,12 @@ module LanguageCards
     end
 
     def application_path_cards_yaml
-      Dir[File.join(application_path, 'cards', language, '*.yml')]
+      Dir[File.join(application_path, 'cards', language, '*.yml')].sort
     end
 
     def home_path_cards_yaml
       if ENV['HOME']
-        Dir[File.join(ENV['HOME'], '.language_cards', 'cards', language, '*.yml')]
+        Dir[File.join(ENV['HOME'], '.language_cards', 'cards', language, '*.yml')].sort
       else
         []
       end

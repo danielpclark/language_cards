@@ -1,4 +1,5 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+Encoding.default_external = Encoding::UTF_8 unless Encoding.default_external == Encoding::UTF_8
 require 'simplecov'
 SimpleCov.start
 require 'open3'
@@ -7,7 +8,6 @@ require 'minitest/autorun'
 require 'support'
 
 class Minitest::Test
-  include Support
   attr_reader :out, :err
   def sys_exec(cmd)
     Open3.popen3(cmd.to_s) do |stdin, stdout, stderr, wait_thr|
