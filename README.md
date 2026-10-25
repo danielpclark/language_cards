@@ -3,6 +3,7 @@
 [![CI](https://github.com/danielpclark/language_cards/actions/workflows/ci.yml/badge.svg)](https://github.com/danielpclark/language_cards/actions/workflows/ci.yml)
 [![Build status](https://ci.appveyor.com/api/projects/status/y6jadvlhk50ncbrh?svg=true)](https://ci.appveyor.com/project/danielpclark/language-cards)
 
+<img width="3200" height="1800" alt="language_cards_v2" src="https://github.com/user-attachments/assets/4f302916-a913-4aed-8d63-880849c04124" />
 
 A terminal flash card game for learning languages that use foreign scripts.  Every language comes with
 card sets for its writing system plus vocabulary, and each card set can be played in two modes:
